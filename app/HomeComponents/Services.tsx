@@ -55,8 +55,8 @@ export default function Services() {
     }, []);
 
     return (
-        <div className='bg-light-bg'>
-            <div className='services container py-28 space-y-12'>
+        <div className='bg'>
+            <div className='services lg:mx-[80px] py-28 space-y-12'>
                 <div className='px-5 service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden'>
                         <div ref={exteriorImageRef} className='relative h-[300px]'>

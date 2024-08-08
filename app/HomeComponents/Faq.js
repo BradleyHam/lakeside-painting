@@ -38,24 +38,25 @@ const FAQ = () => {
   };
 
   return (
-    <div className="p-5 py-[80px] bg-light-bg">
+    <div className="p-5 py-[80px] ">
       <div className="lg:max-w-[70%] container mx-auto">
-        <h2 className="text-2xl font-bold mb-12 text-center tracking-tight font-poppins text-brand-blue">Frequently asked questions</h2>
+
         {faqData.map((faq, index) => (
-          <div onClick={() => toggleFAQ(index)} key={index} className="mb-4 cursor-pointer">
-            <hr className="border-gray-300 my-4" />
+          <div onClick={() => toggleFAQ(index)} key={index} className="mb-4 cursor-pointer border-1 border px-8 py-7 rounded hover:bg-gray-50">
             <div className="flex justify-between items-center">
               <h3 className="text-lg font-semibold text-brand-blue">
                 {faq.question}
               </h3>
-              <FaChevronUp className={`${activeIndex === index ? 'rotate-0' : 'rotate-180'} transition-all duration-300 ease-in-out`}/>
+             <div className='w-[50px] flex justify-end text-primary'>
+              <FaChevronUp size={17} className={`${activeIndex === index ? 'rotate-0' : 'rotate-180'} transition-all duration-300 ease-in-out`}/>
+              </div>
             </div>
-            <div className={`${activeIndex === index ? 'block' : 'hidden'} text-gray-600 mt-2`}>
+            <div className={`${activeIndex === index ? 'block' : 'hidden'} text-primary/60 mt-4`}>
               {faq.answer}
             </div>
           </div>
         ))}
-        <hr className="border-gray-300 my-4" />
+       
       </div>
     </div>
   );

@@ -1,25 +1,25 @@
-import { BiSolidQuoteAltLeft } from "react-icons/bi";
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
+import FiveStars from "../SiteComponents/FiveStars";
 
 export default function TestimonialCard({name, occupation, testimonial}: {name: string, occupation: string, testimonial: string}) {
     return (
-        <div className="flex flex-col shadow-2xl rounded-lg h-full bg-primary">
-            
-            <div className="testionial-card-heading flex space-x-3 py-[20px] px-5">
-                <div className="flex space-x-3 items-center">
-                    <div className="text-accent-2">
-                <BiSolidQuoteAltLeft size={40} color='' />
-                </div>
-                    <div className="text-white ">
-                        <p className="text-lg font-semibold capitalize tracking-tight">{name}</p>
-                        <p className="text-sm uppercase tracking-widest opacity-60">{occupation}</p>  
-                    </div>
+        <div className="flex flex-col  h-full bg-white border border-1 p-10 ">
+            <div className="testionial-card-heading flex space-x-3">
+                <div className="flex space-x-3 items-start justify-between w-full">
+                    <FiveStars />
+                    <div className="text-primary/30 -translate-y-3 translate-x-1">
+                         <BiSolidQuoteAltRight size={40} color='' />
+                    </div>    
                 </div>
             </div>
-
-            <p className="text-brand-blue opacity-60 text-lg font-light leading-normal text-white pt-[20px] pb-[40px] px-5">
+            <p className="text-base font-light leading-normal text-primary/70 py-[10px]">
                 {testimonial}
             </p>
-
+            <div className="text-primary flex flex-col mt-auto space-y-1 pt-[20px]">
+                <p className="text-lg font-semibold capitalize tracking-tight">{name}</p>
+                <p className="text-sm uppercase tracking-widest opacity-60 font-[600]">{occupation}</p>  
+            </div>
         </div>
     )
 }
+ 

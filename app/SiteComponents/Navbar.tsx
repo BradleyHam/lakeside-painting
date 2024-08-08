@@ -65,7 +65,7 @@ export default function Navbar() {
                     <Link href="/projects">
                         <li>Projects</li>
                     </Link>
-                    <ButtonCta text='Book a consultation' />
+                    <ButtonCta text='Book a consultation' type={2}/>
                 </ul>
             </div>
         </div>

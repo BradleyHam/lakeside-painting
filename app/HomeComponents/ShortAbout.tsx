@@ -13,10 +13,10 @@ const Stat: React.FC<{ number: number }> = ({ number }) => {
 
 const ShortAbout: React.FC = () => {
     return (
-        <section className="flex items-center text-primary bg-gray-100">
-            <div className="container pb-[80px]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5">
-                    <div className=" bg-gray-200 h-[300px] w-full relative -translate-y-2 shadow-xl">
+        <section className="flex items-center text-primary bg-light-bg">
+            <div className="container pb-[80px] lg:mx-[80px] lg:py-[120px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 px-5">
+                    <div className=" bg-gray-200 h-[400px] w-full relative shadow-xl">
                         <Image src='/images/team-photo.jpg' alt='' layout='fill' objectFit='cover'/> 
                     </div>
                    
@@ -38,10 +38,10 @@ const ShortAbout: React.FC = () => {
                          <div className=''>
                             
                             </div>
-                           
+                            <button className='text-secondary font-bold flex space-x-1 items-center'> <span>Read About Us</span> <MdArrowOutward size={22} /></button>
+                      
                          </div>
-                         <button className='text-secondary font-bold flex space-x-1 items-center'> <span>Read About Us</span> <MdArrowOutward size={22} /></button>
-                        </div>
+                         </div>
              
                 </div>
        
