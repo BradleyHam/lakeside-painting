@@ -4,26 +4,29 @@ import { RiFacebookFill } from 'react-icons/ri'
 
 export default function Footer(){
     return (  
-        <div className='footer bg-accent text-primary'>
-        <div className='footer-container container mx-auto flex justify-center items-center py-[40px]'>
-          
-            <div className='socials flex justify-center'>
-                <a className='facebook opacity-70 cursor-pointer hover:opacity-100' 
-                href='https://www.instagram.com/littledogdecorating' 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <AiFillInstagram size={30} />
-                </a>
-                <a className='instagram opacity-70 cursor-pointer hover:opacity-100' 
-                href='https://www.facebook.com/Littledogdecorating'
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <RiFacebookFill size={30}  />
-                </a>
+        <div className="grid lg:grid-cols-4 gap-8 lg:gap-8 mx-[20px] lg:mx-[80px] py-14 text-primary">
+        <div className="flex lg:justify-center">
+            <Image className='scale-[.9]' src={'/images/logo.png'} alt='' width={200} height={200}/> 
+        </div>
+        <div className="flex lg:justify-center">
+            <div className="flex flex-col space-y-2">
+                <div className="text-lg font-semibold">Queenstown, New Zealand</div>
+                <div className='text-sm'>Phone: 123-456-7890</div>
+                <div className='text-sm'>Email:bradleyjamesham@gmail.com</div>
             </div>
         </div>
-        <div className='bottom-footer  lg:px-side-spacing py-4  flex justify-center bg-primary text-white'>
-          <p className='opacity-80'>  &copy; 2024 Lakeside Painting </p> 
+        <div className="flex lg:justify-center">
+            <div className="flex flex-col space-y-2">
+                <div className='text-sm'>Home</div>
+                <div className='text-sm'>About</div>
+                <div className='text-sm'>Contact</div>
+            </div>
+        </div>
+        <div className="flex justify-start">
+            <div className="flex space-x-2 ">
+                <AiFillInstagram size={30}/>
+                <RiFacebookFill size={30}/>
+            </div>
         </div>
     </div>
     )

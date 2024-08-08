@@ -21,8 +21,10 @@ const config: Config = {
         "secondary": '#8B9B8B', /* Sage green */
         "accent": '#B8C5D0', /* Light blue-gray */
         "backdrop": '#D2C8B5', /* Beige/tan */
-        "accent-2": '#D2C8B5', /* Beige/tan */
-        'light-bg': 'rgba(210, 200, 181, 0.01)'
+        "accent-1": '#CDC5AF', /* Beige/tan */
+        'light-bg': 'rgba(205, 197, 175, .2)',
+      
+
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

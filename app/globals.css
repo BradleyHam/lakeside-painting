@@ -28,7 +28,7 @@
   background-color: rgba(210, 200, 181, 0.115);
 }
 .hero-container {
-  background: linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.9), rgba(var(--bg-primary-rgb), .9)), url('../public/images/unsplash-house.jpg');
+  background: linear-gradient(90deg, rgba(var(--bg-primary-rgb), 1) 30%, rgba(var(--bg-primary-rgb), .7)), url('../public/images/unsplash-house.jpg');
   background-position: center;
   background-size: cover;
 }
