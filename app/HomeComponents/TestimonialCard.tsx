@@ -3,7 +3,7 @@ import FiveStars from "../SiteComponents/FiveStars";
 
 export default function TestimonialCard({name, occupation, testimonial}: {name: string, occupation: string, testimonial: string}) {
     return (
-        <div className="flex flex-col  h-full bg-white border border-1 p-10 ">
+        <div className="flex flex-col  h-full bg-white shadow-lg lg:p-10 p-7">
             <div className="testionial-card-heading flex space-x-3">
                 <div className="flex space-x-3 items-start justify-between w-full">
                     <FiveStars />

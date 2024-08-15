@@ -39,12 +39,12 @@ const FAQ = () => {
 
   return (
     <div className="p-5 py-[80px] ">
-      <div className="lg:max-w-[70%] container mx-auto">
+      <div className="lg:max-w-[70%] container mx-auto flex flex-col space-y-3">
 
         {faqData.map((faq, index) => (
-          <div onClick={() => toggleFAQ(index)} key={index} className="mb-4 cursor-pointer border-1 border px-8 py-7 rounded hover:bg-gray-50">
-            <div className="flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-brand-blue">
+          <div onClick={() => toggleFAQ(index)} key={index} className=" cursor-pointer border-1 border px-5 lg:px-8 py-5 lg:py-7 rounded hover:bg-gray-50 ">
+            <div className="flex space-x-4 justify-between items-center">
+              <h3 className="text-base lg:text-lg font-semibold text-brand-blue">
                 {faq.question}
               </h3>
              <div className='w-[50px] flex justify-end text-primary'>

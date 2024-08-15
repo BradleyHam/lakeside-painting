@@ -61,7 +61,7 @@ function ContactForm() {
   return (
     <form className='contact-form flex flex-col items-start' onSubmit={handleSubmit}>
         <input
-          className='w-full text-white font-primary  mb-1 p-3  rounded border border-1'
+          className='w-full text-white font-primary  mb-1 p-3  rounded border border-1 text-sm'
           placeholder='Your Name'
           aria-label="Name"
           type="text"
@@ -72,7 +72,7 @@ function ContactForm() {
           required
         />
         <input
-          className='w-full text-white font-primary  p-3 mb-1 rounded border border-1'
+          className='w-full text-white font-primary  p-3 mb-1 rounded border border-1 text-sm'
           placeholder='Your Email'
           aria-label="Email"
           type="email"
@@ -83,7 +83,7 @@ function ContactForm() {
           required
         />
         <textarea
-          className=' w-full mb-5  font-primary  p-3  rounded min-h-[150px] border border-1'
+          className=' w-full mb-5  font-primary  p-3  rounded min-h-[150px] border border-1 text-sm'
           id="message"
           name="message"
           placeholder='Your Message'
@@ -99,7 +99,7 @@ function ContactForm() {
             <p className='text-[17px] font-medium'>Sending...</p>
           ) : (
             <>
-              <p className='text-regular font-semibold uppercase cursor-pointer'>Submit</p>
+              <p className=' font-semibold uppercase cursor-pointer text-sm'>Submit</p>
             
             </>
           )}

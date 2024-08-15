@@ -134,9 +134,10 @@ li{
 }
 
 .footer-banner{
-  /* background-image: linear-gradient(to bottom, #c18c5d 80%, #c18c5d 100%), url('/images/transformYourSpace.jpg');  */
+  background: linear-gradient(rgba(var(--bg-primary-rgb), .8), rgba(var(--bg-primary-rgb), .8)),url('/images/queenstown.avif'); 
 
   background-position: center;
+  background-size: cover;;
 }
 
 .subtlePattern {

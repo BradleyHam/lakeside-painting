@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import ButtonCta from './ButtonCta';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { IoClose } from 'react-icons/io5';
+import { usePathname } from 'next/navigation';
 
 interface MobileNavProps {
     open: boolean;
@@ -14,6 +16,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
     const mobileNavRef = useRef<HTMLUListElement>(null);
     const listItemRefs = useRef<(HTMLLIElement | null)[]>([]);
     const buttonRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         const tl = gsap.timeline({ onComplete: onClose });
@@ -30,18 +33,19 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
     }, [open, onClose]);
 
     return (
-        <ul ref={mobileNavRef} className='mobile-nav fixed bg-brand-blue h-screen flex flex-col justify-center w-screen items-center space-y-4 uppercase tracking-wider text-sm lg:hidden inset-0'>
+        <ul ref={mobileNavRef} className='mobile-nav z-40 fixed bg-primary h-screen flex flex-col justify-center w-screen items-center space-y-4 uppercase tracking-wider text-sm lg:hidden inset-0 text-white font-semibold'>
+            <div className="absolute top-8 right-12 cursor-pointer">
+            <IoClose onClick={handleToggle} size={25} /> 
+            </div>
+           
             <Link href="/" onClick={handleToggle}>
-                <li ref={(el) => { listItemRefs.current[0] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Home</li>
-            </Link>
-            <Link href="/about" onClick={handleToggle}>
-                <li ref={(el) => { listItemRefs.current[1] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>About</li>
+                <li className={pathname === '/' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[0] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Home</li>
             </Link>
             <Link href="/projects" onClick={handleToggle}>
-                <li ref={(el) => { listItemRefs.current[2] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Projects</li>
+                <li className={pathname.startsWith('/projects') ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[2] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Projects</li>
             </Link>
             <div ref={buttonRef} className="pt-8" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-                <ButtonCta text='Book a consultation' />
+                <ButtonCta text='Book a consultation' type={1} />
             </div>
         </ul>
     );

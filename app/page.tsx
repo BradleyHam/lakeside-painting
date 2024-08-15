@@ -17,7 +17,7 @@ import BookingForm from './SiteComponents/BookingForm/BookingForm';
 export default function Home() {
 
   return (
-    <main className="relative text-brand-blue">
+    <main className="relative text-brand-blue ">
       
           <Navbar />
           <Hero />

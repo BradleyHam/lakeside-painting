@@ -4,6 +4,7 @@ import ButtonCta from './ButtonCta'
 import {COLORS} from '@/Utils/variables'
 import { LuPaintbrush } from 'react-icons/lu'
 import Modal from './Modal'
+import Image from 'next/image'
 // import { useModal } from '../SiteComponents/ModalClientManager';
 
 
@@ -19,21 +20,21 @@ function FooterBanner() {
   };
 
   return (
-    <div className="footer-banner flex flex-col justify-center w-full py-[80px]  items-center px-5 bg-white relative z-20">
-          {/* <div className="subtlePattern inset-0 relative z-0"></div> */}
-          <div className="z-75 flex flex-col items-center relative">
-          <div className="text-center text-white ">
-          <h2 className='font-bold text-2xl mb-4 text-brand-primary'>Transform your space!</h2>
-            <h2 className='text-xl  font-regular text-secondary tracking-tighter text-brand-primary'>See how we can help increase the value to your property today! </h2>
-          </div>
-          <div onClick={() => setIsModalOpen(true)} className=" mt-[30px] cta-button space-x-2 tracking-wide group border-brand-orange text-brand-orange  p-4 px-6 flex items-center rounded-lg shadow-xl active:shadow-md hover:-translate-y-[1px] cursor-pointer active:translate-y-[1px] bg-brand-secondary">
-            <button  className="my-auto uppercase font-bold font-poppins text-md text-white transition duration-300 ease-in-out flex items-center ">
-              <LuPaintbrush size={25} style={{ strokeWidth: '2px' }} color={COLORS.primary} />
-              <span className='ml-2 text-brand-primary'>Book a consultation</span>
-            </button>
-          </div>
-          <Modal isOpen={isModalOpen} onClose={handleCloseModal}/>
-          </div>
+    <div className="footer-banner px-5 lg:px-[120px] py-[80px] flex flex-col space-y-4 items-start relative">
+      <div className="z-20 flex flex-col space-y-8 lg:space-y-0 lg:flex-row lg:justify-between w-full items-start ">
+      <div className='flex flex-col space-y-4 text-white '>
+        <h3 className='text-xs uppercase tracking-widest text-white font-medium'>Increase the value to your property</h3>
+        <h2 className='text-xl lg:text-2xl font-semibold leading-relaxed tracking-tight'>Get a free consultation from one of our experts</h2>
+      </div>
+    
+     <button className='bg-accent-1 text-primary text-xs px-5 py-4 font-bold uppercase tracking-wide'>
+        Book a consultation
+     </button>
+     
+     </div>
+ 
+ 
+
     </div>
   )
 }

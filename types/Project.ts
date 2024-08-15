@@ -1,14 +1,24 @@
 import { PortableTextBlock } from "sanity";
 
 export type Project = {
-    largeImage: string;
-    smallImage: string;
-    mediumImage: string;
-    title: string;
-    categories: string[];
-    slug: string;
-    content: PortableTextBlock[];
-    imageUrls: string[]
-  };
-
-  
+  shortDesc: string;
+  largeImage: string;
+  smallImage?: string;
+  mediumImage?: string;
+  slug: string;
+  title: string;
+  categories: string[];
+  content: string;
+  imageUrls: string;
+  tags: string[];
+  imageShowcase: {
+      before: {
+          image: string;
+          alt: string;
+      };
+      after: {
+          image: string;
+          alt: string;
+      };
+  }[];
+};
