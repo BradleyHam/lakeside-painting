@@ -14,7 +14,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 // Dynamically import the LightboxGallery component to ensure it is only used on the client side
 const LightboxGallery = dynamic(() => import("../LightboxGallery"), { ssr: false });
 
-export default async function Project({ params }: { params: { project: string } }) {
+export default async function Project({ params }) {
   const { project } = params;
   const slug = project.replace('%20', '-')
   const projectData = projects.find((p) => p.slug === slug);
