@@ -2,21 +2,20 @@ import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
     {
-        name: 'Michele White',
-        occupation: 'Harcouts',
-        testimonial: `An excellent job painting the outside of our house at a very fair price. Dan and his staff are professional, tidy, friendly, excellent communicators and completed a quality job. Thanks  We will certainly use this company again!`
+        name: 'Kate Wilkins',
+        occupation: 'Aroha Wellness',
+        testimonial: `Bradley went above and beyond for the painting of my tiny house. From the initial consult to the finer details and even coming out of his way to paint an extra panel that I wanted after the job was done, he made the effort to get it done when I was ready. Would highly recommend to anyone who is eco minded and wants attention to detail. Love the all natural paint`
     },
     {
-        name: 'Murray Jenkins',
-        occupation: 'The Rocks Limited',
-        testimonial: `For all our decorating work both business projects and personal work I engage Littledog Decorating Company and have done so for many years.
-The quality of workmanship is absolutely excellent.  Communication and reliability matches the professionalism of Dan and his team’s workmanship and knowledge of the trade. Preparation is one of the main ingredient so the finish is superb.`
+        name: 'Claire Hampson',
+        occupation: 'Avis Car Rental',
+        testimonial: `Brad did an amazing job of painting a bathroom renovation. Great attention to detail and even went the extra mile to fill a sizeable hole we found behind a mirror. Great communication and would definitely recommend.`
 
     },
     {
-        name: 'Hannah White',
-        occupation: 'Professionals',
-        testimonial: `Dan did an excellent job on our house renovations - really reliable, professional and knowledgeable. Very reasonable rates. Would definitely recommend to others and wouldn't hesitate to use him again.  Griff's company was a bonus too for our dog Charlie who loved playing with him!`
+        name: 'Joe Drummond',
+        occupation: 'Harcouts',
+        testimonial: `Lakeside Painting transformed our home beautifully. The team was professional, punctual, and paid great attention to detail. They used high-quality paints and finished the job ahead of schedule. Our walls look flawless, and the color advice they provided was spot-on. Cleanup was thorough, and they were respectful of our property throughout. Highly recommend for any painting needs!`
     }
 ]
 

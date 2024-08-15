@@ -21,7 +21,7 @@ const LeftSide = ({ selectedDate, selectedTimeSlot, showForm }) => {
         {!bothSelected && (
           <>
             <h2 className="text-xl font-bold mb-4 mt-4">Welcome to Our Booking System</h2>
-            <p>Please select a date and time for your site visit. Once you've made your selection, you'll be able to provide additional details for your booking.</p>
+            <p>Please select a date and time for your site visit. Once you&apos;ve made your selection, you&apos;ll be able to provide additional details for your booking.</p>
             </>
         )}
       </div>
