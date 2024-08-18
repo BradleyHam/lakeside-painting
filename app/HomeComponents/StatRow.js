@@ -8,7 +8,7 @@ const LogoGrid = () => {
         {[
           '/images/trustedBy/harcourts.webp',
           '/images/trustedBy/professionals.webp',
-          '/images/elleAndriley.png',
+          '/images/trustedBy/elleAndRiley.png',
           '/images/trustedBy/master-painters.jpg',
         
         ].map((src, index) => (

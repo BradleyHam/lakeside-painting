@@ -1,6 +1,6 @@
 const projects = [
     {
-        "largeImage": "/images/arthurs-point/large-image.jpeg",
+        "largeImage": "/images/arthurs-point/ap-featureWall-after.jpeg",
         "slug": "arthurs-point-repaint",
         "title": "Arthur's Point Repaint",
         "categories": ["interior"],
