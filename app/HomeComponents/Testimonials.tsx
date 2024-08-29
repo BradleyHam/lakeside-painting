@@ -21,8 +21,9 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <div className="testimonials bg-light-bg lg:px-side-spacing">
-            <div className='container px-5 flex flex-col lg:flex-row items-stretch space-y-12 lg:space-y-0 lg:space-x-4 mx-auto py-28'>
+        <div className="testimonials bg-light-bg/10 flex flex-col items-center mx-auto px-side-spacing py-section-spacing">
+             <h2 className='mb-[60px] text-lg font-medium'>We like to let our clients do the talking ...</h2>
+            <div className='container  flex flex-col lg:flex-row items-stretch space-y-6  lg:space-y-0 lg:space-x-4'>
                 {
                     testimonials.map((item, index) => (
                         <div key={index}className="lg:w-1/2">

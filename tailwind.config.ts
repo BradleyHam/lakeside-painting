@@ -23,8 +23,6 @@ const config: Config = {
         "backdrop": '#D2C8B5', /* Beige/tan */
         "accent-1": '#CDC5AF', /* Beige/tan */
         'light-bg': 'rgba(205, 197, 175, .2)',
-      
-
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
@@ -32,12 +30,23 @@ const config: Config = {
         playfair: ['Playfair Display', 'serif'],
       },
       spacing: {
-        'side-spacing': '200px', // Default value
+        'side-spacing': '20px', // Default value
         'side-spacing-sm': '20px',
         'side-spacing-md': '40px',
         'side-spacing-lg': '60px',
         'side-spacing-xl': '60px',
+        'section-spacing': '60px',
+        'section-spacing-lg': '80px',
       },
+      fontSize: {
+        'xs': '0.8rem',     // 12.8px
+        'sm': '1rem',       // 16px
+        'base': '1.25rem',  // 20px
+        'lg': '1.563rem',   // 25px
+        'xl': '1.953rem',   // 31.25px
+        '2xl': '2.441rem',  // 39.06px
+        '3xl': '3.052rem',  // 48.83px
+      }
     },
   },
   plugins: [
@@ -87,6 +96,14 @@ const config: Config = {
           '@screen xl': {
             paddingLeft: theme('spacing.side-spacing-xl'),
             paddingRight: theme('spacing.side-spacing-xl'),
+          },
+        },
+        '.py-section-spacing': {
+          paddingTop: theme('spacing.section-spacing'),
+          paddingBottom: theme('spacing.section-spacing'),
+          '@screen lg': {
+            paddingTop: theme('spacing.section-spacing-lg'),
+            paddingBottom: theme('spacing.section-spacing-lg'),
           },
         },
       });

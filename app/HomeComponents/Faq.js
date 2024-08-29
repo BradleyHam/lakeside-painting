@@ -38,20 +38,21 @@ const FAQ = () => {
   };
 
   return (
-    <div className="p-5 py-[80px] ">
+    <div className="px-side-spacing py-section-spacing bg-light-bg/10 flex flex-col items-center">
+      <h2 className='text-lg font-semibold mb-12'>FAQ's</h2>
       <div className="lg:max-w-[70%] container mx-auto flex flex-col space-y-3">
 
         {faqData.map((faq, index) => (
-          <div onClick={() => toggleFAQ(index)} key={index} className=" cursor-pointer border-1 border px-5 lg:px-8 py-5 lg:py-7 rounded hover:bg-gray-50 ">
+          <div onClick={() => toggleFAQ(index)} key={index} className=" cursor-pointer border-1 border px-5 lg:px-8 py-5 lg:py-7 rounded bg-white ">
             <div className="flex space-x-4 justify-between items-center">
-              <h3 className="text-base lg:text-lg font-semibold text-brand-blue">
+              <p className="font-semibold text-sm">
                 {faq.question}
-              </h3>
+              </p>
              <div className='w-[50px] flex justify-end text-primary'>
               <FaChevronUp size={17} className={`${activeIndex === index ? 'rotate-0' : 'rotate-180'} transition-all duration-300 ease-in-out`}/>
               </div>
             </div>
-            <div className={`${activeIndex === index ? 'block' : 'hidden'} text-primary/60 mt-4`}>
+            <div className={`${activeIndex === index ? 'block' : 'hidden'} text-primary/60 mt-4 text-sm`}>
               {faq.answer}
             </div>
           </div>

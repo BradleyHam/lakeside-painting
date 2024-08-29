@@ -55,9 +55,9 @@ export default function Services() {
     }, []);
 
     return (
-        <div className='bg'>
-            <div className='services lg:mx-[80px] py-28 space-y-12'>
-                <div className='px-5 service flex flex-col lg:flex-row'>
+        <div className='bg py-section-spacing px-side-spacing'>
+            <div className='services space-y-12'>
+                <div className='service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden'>
                         <div ref={exteriorImageRef} className='relative h-[300px]'>
                             <Image src='/images/ldd-exterior.jpg' layout='fill' objectFit='cover' alt='Exterior Painting' />
@@ -65,7 +65,7 @@ export default function Services() {
                     </div>
                     <ServiceText heading={ServiceData.exteriorPainting.heading} bulletPoints={ServiceData.exteriorPainting.bulletPoints} />
                 </div>
-                <div className='px-5 service flex flex-col lg:flex-row'>
+                <div className=' service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden lg:order-1'>
                         <div ref={interiorImageRef} className='relative h-[300px]'>
                             <Image src='/images/ldd-interior.jpg' layout='fill' objectFit='cover' alt='Interior Painting' />

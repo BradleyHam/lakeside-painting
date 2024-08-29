@@ -9,15 +9,15 @@ export default function Footer(){
     const pathname = usePathname()
 
     return (  
-        <div className="grid lg:grid-cols-4 gap-8 lg:gap-8 mx-[20px] lg:mx-[80px] py-14 text-primary">
+        <footer className="grid lg:grid-cols-4 gap-8 lg:gap-8 mx-5 lg:mx-20 py-14 text-primary">
             <div className="flex lg:justify-center">
-                <Image className='scale-[.9]' src={'/images/logo.png'} alt='' width={200} height={200}/> 
+                <Image className='scale-90' src={'/images/logo.png'} alt='Logo' width={200} height={200}/> 
             </div>
             <div className="flex lg:justify-center">
                 <div className="flex flex-col space-y-2">
-                    <div className="text-lg font-semibold">Queenstown, New Zealand</div>
+                    <div className="text-base font-semibold">Queenstown, New Zealand</div>
                     <div className='text-sm'>Phone: 123-456-7890</div>
-                    <div className='text-sm'>Email: bradleyjamesham@gmail.com</div>
+                    <div className='text-sm whitespace-nowrap'>Email: bradleyjamesham@gmail.com</div>
                 </div>
             </div>
             <div className="flex lg:justify-center">
@@ -36,6 +36,6 @@ export default function Footer(){
                     <RiFacebookFill size={30}/>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

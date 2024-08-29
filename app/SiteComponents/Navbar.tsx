@@ -64,9 +64,14 @@ export default function Navbar() {
                         <li className={pathname === '/' ? 'font-bold' : ''}>Home</li>
                     </Link>
                  
+                    <Link href="/about">
+                        <li className={pathname === '/about' ? 'font-bold' : ''}>About</li>
+                    </Link>
+                 
                     <Link href="/projects">
                         <li className={pathname.startsWith('/projects') ? 'font-bold' : ''}>Projects</li>
                     </Link>
+
                     <ButtonCta text='Book a consultation' type={2}/>
                 </ul>
             </div>

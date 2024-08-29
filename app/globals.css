@@ -8,29 +8,31 @@
 @import '@fontsource/poppins/600.css'; /* Bold */
 @import '@fontsource/poppins/800.css'; /* Bold */
 
-@import '@fontsource/montserrat/400.css'; /* Regular */
-@import '@fontsource/montserrat/500.css'; /* Medium */
-@import '@fontsource/montserrat/700.css'; /* Bold */
-@import '@fontsource/montserrat/600.css'; /* Bold */
-@import '@fontsource/montserrat/800.css'; /* Bold */
-
 :root {
-  --font-primary: 'Montserrat', sans-serif;
+  --font-primary: 'Poppins', sans-serif;
   --bg-primary: rgb(61, 77, 92);
   --bg-secondary: rgb(210, 200, 181);
   --banner-gradient: #3D4D5C;
   --bg-primary-rgb: 61, 77, 92;
   --bg-secondary-rgb:210, 200, 181;
-  /* background-color: rgba(210, 200, 181, .3); */
+
+  font-size: 16px;
+ 
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
 }
 
 .hero{
   background-color: rgba(210, 200, 181, 0.115);
 }
 .hero-container {
-  background: linear-gradient(90deg, rgba(var(--bg-primary-rgb), 1) 30%, rgba(var(--bg-primary-rgb), .7)), url('../public/images/unsplash-house.jpg');
+  /* background: linear-gradient(90deg, rgba(var(--bg-primary-rgb), 1) 30%, rgba(var(--bg-primary-rgb), .7)), url('../public/images/unsplash-house.jpg'); */
   background-position: center;
   background-size: cover;
+  background: var(--bg-primary);
 }
 
 .top-banner{
@@ -54,43 +56,23 @@ h1, h2, h3, h4, h5, h6, p {
 
 p{
   font-family: var(--font-primary);
+  color: var(--bg-primary)
 }
 body {
   color: #0F122F;
 
 }
-h3{
-  color: #0F122F;
-  font-family: var(--font-primary);
 
-}
-h2{
-  font-family: var(--font-primary);
-}
 
-h1{
- 
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 72px;
-  color: white;
+  
 
-  font-family: var(--font-primary);
-
-}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-h3{
-  font-family: var(--font-primary), sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  
-}
+
 
 h4{
   font-size: 14px;        /* equivalent to Tailwind's text-sm */

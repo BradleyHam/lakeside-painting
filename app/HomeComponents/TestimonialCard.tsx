@@ -12,12 +12,12 @@ export default function TestimonialCard({name, occupation, testimonial}: {name: 
                     </div>    
                 </div>
             </div>
-            <p className="text-base font-light leading-normal text-primary/70 py-[10px]">
+            <p className="text-sm font-light leading-normal text-primary/70 py-[10px]">
                 {testimonial}
             </p>
             <div className="text-primary flex flex-col mt-auto space-y-1 pt-[20px]">
-                <p className="text-lg font-semibold capitalize tracking-tight">{name}</p>
-                <p className="text-sm uppercase tracking-widest opacity-60 font-[600]">{occupation}</p>  
+                <h3 className="text-base font-semibold">{name}</h3>
+                <h4 className="text-sm">{occupation}</h4>  
             </div>
         </div>
     )

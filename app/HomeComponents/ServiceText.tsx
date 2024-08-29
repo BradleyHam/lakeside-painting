@@ -5,12 +5,12 @@ import Link from "next/link";
 export default function ServiceText({heading, bulletPoints}: {heading: string, bulletPoints: string[]}) {
     return (
         <>
-            <div className='lg:w-1/3 bg-primary  p-6 flex flex-col justify-between'>
+            <div className='lg:w-1/3 bg-light-bg  p-6 flex flex-col justify-between text-primary'>
             <div className='top-content'>
-            <h3 className="text-white text-lg">{heading}</h3>
-            <ul className='list-disc list-inside text-white list-none pt-2 space-y-1 font-lato'>
+            <h3 className="text-base font-bold">{heading}</h3>
+            <ul className='list-disc list-inside  list-none pt-2 space-y-1 font-lato'>
     
-                {bulletPoints.map((point, index) =>   <li key={index} className='flex items-center space-x-2'><div className="text-accent"><FaCheck/></div><p className='opacity-90'>{point}</p></li>)}
+                {bulletPoints.map((point, index) =>   <li key={index} className='flex items-center space-x-2'><div className=""><FaCheck/></div><p className='opacity-90'>{point}</p></li>)}
             </ul>
             </div>
             <Link href="/projects">

@@ -8,6 +8,7 @@ import ProjectSection from "./ProjectSection"
 import ModalClientManager from "../SiteComponents/ModalClientManager"
 import FooterBanner from "../SiteComponents/FooterBanner"
 import projects from '../../Utils/mockProjects'
+import BeforeAfterSlider from "./BeforeAfterSlider"
 
 export default async function Projects() {
   

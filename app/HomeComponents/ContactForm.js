@@ -59,6 +59,7 @@ function ContactForm() {
   };
 
   return (
+  <div className='bg-white p-4 rounded-lg border'>
     <form className='contact-form flex flex-col items-start' onSubmit={handleSubmit}>
         <input
           className='w-full text-white font-primary  mb-1 p-3  rounded border border-1 text-sm'
@@ -99,7 +100,7 @@ function ContactForm() {
             <p className='text-[17px] font-medium'>Sending...</p>
           ) : (
             <>
-              <p className=' font-semibold uppercase cursor-pointer text-sm'>Submit</p>
+              <p className=' font-semibold uppercase cursor-pointer text-white text-sm'>Submit</p>
             
             </>
           )}
@@ -112,6 +113,8 @@ function ContactForm() {
             </div>
         )}
     </form>
+  </div>
+    
   );
 }
 

@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const LogoGrid = () => {
   return (
-    <div className="flex flex-col items-center container mx-auto px-4 py-6 lg:py-12 lg:px-[80px]">
-      <h3 className='mr-10 text-primary pt-4 pb-8 text-sm uppercase'>Trusted By</h3>
+    <div className="flex flex-col items-center container mx-auto px-side-spacing py-section-spacing">
+      <h4 className='mr-10 text-primary pb-8  uppercase'>Trusted By</h4>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-12 gap-y-2 lg:gap-x-10 lg:gap-y-4 items-center">
         {[
           '/images/trustedBy/harcourts.webp',

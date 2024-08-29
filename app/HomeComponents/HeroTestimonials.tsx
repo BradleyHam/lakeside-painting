@@ -11,37 +11,24 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
-    const checkMediaQuery = () => {
-      // Match the Tailwind 'lg:' breakpoint (typically 1024px)
-      setIsLargeScreen(window.matchMedia('(min-width: 1024px)').matches);
-    };
-
-    checkMediaQuery();
-    window.addEventListener('resize', checkMediaQuery);
-
-    return () => window.removeEventListener('resize', checkMediaQuery);
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % testimonials.length);
+    }, 5000); // Increased from 3000 to 5000 milliseconds (5 seconds)
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!isLargeScreen) {
-      const interval = setInterval(() => {
-        setCurrentIndex(currentIndex => (currentIndex + 1) % testimonials.length);
-      }, 3000); // changes every 3 seconds
-      return () => clearInterval(interval);
-    }
-  }, [isLargeScreen]);
-
-  const offset = currentIndex * -100; // Each item moves left by 100% of container width
-
   return (
-    <div className="overflow-hidden w-full   mt-10">
-      <div className="flex transition-transform duration-500 ease-in-out"
-           style={{ transform: isLargeScreen ? 'none' : `translateX(${offset}%)` }}>
+    <div className="relative overflow-hidden w-full mt-[32px]">
+      <div className="flex transition-all duration-1000 ease-in-out">
         {testimonials.map((testimonial, index) => (
-          <div key={testimonial.id} className="flex-none w-full  ">
+          <div
+            key={testimonial.id}
+            className={`w-full flex-shrink-0 transition-opacity duration-1000 ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0 absolute top-0 left-0'
+            }`}
+          >
             <HeroTestimonial text={testimonial.text} testimonialWriter={testimonial.testimonialWriter}/>
           </div>
         ))}
