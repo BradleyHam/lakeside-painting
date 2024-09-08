@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, ChangeEvent } from 'react';
-import { Slider } from '@/components/ui/slider';
+
 import Navbar from '@/app/SiteComponents/Navbar';
 import ProcessSection from '../HomeComponents/ProcessSection';
 import FooterBanner from '@/app/SiteComponents/FooterBanner';
