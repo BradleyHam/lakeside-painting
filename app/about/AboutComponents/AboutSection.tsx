@@ -9,7 +9,7 @@ export default function AboutSection() {
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <Image 
                             src="/images/lakeside-painting-team.jpg" 
-                            alt="Lakeside Painting Team" 
+                            alt="Lakeside Painting's expert team of professional painters in Queenstown, NZ - Delivering quality interior and exterior painting services since 2010" 
                             width={600} 
                             height={400} 
                             className="rounded-lg shadow-lg"

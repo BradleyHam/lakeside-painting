@@ -1,6 +1,7 @@
 import React from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, isBefore, isSameMonth as isSameMonthFns } from 'date-fns';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const DateSelector = ({ currentDate, setCurrentDate, selectedDate, handleDateClick, today, tomorrow }) => {
   const monthStart = startOfMonth(currentDate);
@@ -21,7 +22,7 @@ const DateSelector = ({ currentDate, setCurrentDate, selectedDate, handleDateCli
   return (
     <div className='border-x-2 px-12'>
       <div className="flex justify-between items-center mb-4 text-primary">
-        <h2 className="text-2xl font-bold ">
+        <h2 className="text-lg font-bold ">
           {format(currentDate, 'MMMM yyyy')}
         </h2>
         <div>
@@ -42,7 +43,7 @@ const DateSelector = ({ currentDate, setCurrentDate, selectedDate, handleDateCli
           <div key={day} className="text-center font-bold text-primary">{day}</div>
         ))}
         {monthDays.map(day => {
-          const isSelectable = !isBefore(day, tomorrow);
+          const isSelectable = isBefore(today, day);
           const isSelected = selectedDate && day.toDateString() === selectedDate.toDateString();
           
           return (

@@ -16,8 +16,8 @@ export default function TestimonialCard({name, occupation, testimonial}: {name: 
                 {testimonial}
             </p>
             <div className="text-primary flex flex-col mt-auto space-y-1 pt-[20px]">
-                <h3 className="text-base font-semibold">{name}</h3>
-                <h4 className="text-sm">{occupation}</h4>  
+                <h3 className="text-sm lg:text-base font-semibold">{name}</h3>
+                <h4 className="text-xs lg:text-sm">{occupation}</h4>  
             </div>
         </div>
     )

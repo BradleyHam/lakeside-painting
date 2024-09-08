@@ -22,7 +22,9 @@ const testimonials = [
 export default function Testimonials() {
     return (
         <div className="testimonials bg-light-bg/10 flex flex-col items-center mx-auto px-side-spacing py-section-spacing">
-             <h2 className='mb-[60px] text-lg font-medium'>We like to let our clients do the talking ...</h2>
+              <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>Testimonials </h4>
+              <h2 className='text-base font-semibold mb-12 text-center'>See what our clients are saying about us </h2>
+              
             <div className='container  flex flex-col lg:flex-row items-stretch space-y-6  lg:space-y-0 lg:space-x-4'>
                 {
                     testimonials.map((item, index) => (

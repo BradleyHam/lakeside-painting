@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import HeroTestimonial from "./HeroTestimonial";
-import test from 'node:test';
 
 const testimonials = [
   { id: 1, text: "reliable, professional and knowledgeable", testimonialWriter: 'Hannah White' },

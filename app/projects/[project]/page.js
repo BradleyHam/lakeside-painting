@@ -11,6 +11,8 @@ import Image from 'next/image'
 import projects from '../../../Utils/mockProjects'
 import { FaArrowRightLong } from "react-icons/fa6";
 import BeforeAfterSlider from "../BeforeAfterSlider";
+import ProjectCard from '@/app/projects/ProjectCard';
+import ProcessSection from "@/app/HomeComponents/ProcessSection";
 
 // Dynamically import the LightboxGallery component to ensure it is only used on the client side
 const LightboxGallery = dynamic(() => import("../LightboxGallery"), { ssr: false });
@@ -65,13 +67,19 @@ export default function Project({ params }) {
     }
   });
 
+  // Find two random projects that are not the current project
+  const otherProjects = projects
+    .filter(p => p.slug !== params.slug)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
   return (
   
-    <div>
+    <div className=''>
 
       <ModalClientManager>
         <Navbar />
-        <div className="top-banner h-[220px] lg:h-[300px] relative flex items-center">
+        <div className="top-banner h-[220px] lg:h-[300px] relative flex items-center mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
           <Image src={largeImage} alt={title} layout='fill' objectFit="cover"/>
           <div className="absolute inset-0 bg-primary opacity-50"></div>
         </div>
@@ -91,10 +99,7 @@ export default function Project({ params }) {
                     <div key={index} className="bg-primary/10 px-[12px] py-[8px] text-primary/80 capitalize text-xs font-medium mb-2">{tag}</div>
                   ))}
                 </div>
-                <div className="flex flex-col space-y-1">
-                  <div className="location"><span className="font-semibold mr-2 capitalize">location:</span>Queenstown</div>
-                  <div className="hours"><span className="font-semibold mr-2 capitalize">hours:</span>127</div>
-                </div>
+             
               </div>
               <div className="mt-5 lg:mt-0 leading-relaxed">
                 {contentParagraphs.map((paragraph, index) => (
@@ -113,6 +118,7 @@ export default function Project({ params }) {
                      afterImage={image.after.image}
                      beforeAlt={image.before.alt}
                      afterAlt={image.after.alt}
+                     initialPosition={100}
                      onBeforeClick={() => openLightbox(index, false)}
                      onAfterClick={() => openLightbox(index, true)}
                    />
@@ -140,6 +146,35 @@ export default function Project({ params }) {
           )}
          
         </div>
+        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center">
+          <h2 className='text-base font-semibold mb-12'>Explore more of our projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+              {otherProjects.map((project) => (
+                <ProjectCard
+                  key={project.slug}
+                  title={project.title}
+                  largeImage={project.largeImage}
+                  categories={project.categories}
+                  topHeavy={false}
+                  slug={project.slug}
+                  tags={project.tags}
+                  shortDesc={project.shortDesc}
+                />
+              ))}
+            </div>
+            <div className="text-center">
+              <Link href="/projects" className="">
+                   <button className='mt-[48px] font-semibold flex items-center space-x-4 px-6 py-4 text-primary rounded-lg group'>
+              <span className='transition-all duration-300 group-hover:translate-x-1 '>See all projects</span>    
+              
+              <FaArrowRightLong className='transition-all duration-300 group-hover:-translate-x-1' />
+            </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+        <ProcessSection bg="white" />
         <FooterBanner />
         <Footer />
         {lightboxIsOpen && lightboxImages.length > 0 && (

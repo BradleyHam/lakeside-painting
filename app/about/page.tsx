@@ -17,13 +17,16 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="text-brand-primary">
+    <main className="text-brand-primary mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
       <Navbar />
-      <TopBanner heading="About Lakeside Painting" />
+      <TopBanner 
+        headingSmall="Queenstown's Trusted Painters" 
+        headingLarge="Our Painting Journey"
+      />
       <ShortAbout />
       <Values />
       <TeamSection />
-      <ProcessSection />
+      <ProcessSection bg='white'/>
       <FooterBanner />
       <Footer />
     </main>

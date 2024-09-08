@@ -59,7 +59,7 @@ function ContactForm() {
   };
 
   return (
-  <div className='bg-white p-4 rounded-lg border'>
+  <div className=''>
     <form className='contact-form flex flex-col items-start' onSubmit={handleSubmit}>
         <input
           className='w-full text-white font-primary  mb-1 p-3  rounded border border-1 text-sm'

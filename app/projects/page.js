@@ -8,19 +8,25 @@ import ProjectSection from "./ProjectSection"
 import ModalClientManager from "../SiteComponents/ModalClientManager"
 import FooterBanner from "../SiteComponents/FooterBanner"
 import projects from '../../Utils/mockProjects'
+import ProcessSection from "../HomeComponents/ProcessSection"
 import BeforeAfterSlider from "./BeforeAfterSlider"
 
 export default async function Projects() {
   
     return (
-        <main className="">
+        <main className="mt-[var(--navbar-height-mobile)] lg:mt-[var(--navbar-height-desktop)]">
             <ModalClientManager>
             <Navbar />
-            <div className="projects-container">
+            <TopBanner 
+          headingSmall="Lakeside Painting Portfolio" 
+          headingLarge="Transforming Queenstown Homes with Expert Painting"
+        />
+            <div className="projects-container bg-light-bg/10">
              <div className="projects">
               <ProjectSection projects={projects}/>
             </div>
             </div>
+            <ProcessSection bg="white" />
             <FooterBanner />
             <Footer />
             </ModalClientManager>

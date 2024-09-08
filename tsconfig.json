@@ -22,6 +22,6 @@
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/HomeComponents/HeroHeading.js", "app/HomeComponents/ContactForm.js", "sanity/schema.js", "app/projects/[project]/ExpandableContent.js", "app/SiteComponents/ContentRenderer.js", "app/SiteComponents/makeAppointment/MakeAppointment.js", "app/projects/[project]/page.js", "app/projects/ProjectCard.js", "app/projects/page.js", "app/HomeComponents/ProjectsPreview.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/HomeComponents/HeroHeading.js", "app/HomeComponents/ContactForm.js", "sanity/schema.js", "app/projects/[project]/ExpandableContent.js", "app/SiteComponents/ContentRenderer.js", "app/SiteComponents/makeAppointment/MakeAppointment.js", "app/projects/[project]/page.js", "app/projects/ProjectCard.tsx", "app/projects/page.js", "app/HomeComponents/ProjectsPreview.js", "app/bookingPage/page.js"],
   "exclude": ["node_modules"]
 }

@@ -11,36 +11,35 @@ const projects = [
         "imageUrls": '',
         "imageShowcase": [
             {
-              
                 after: {
                     image: "/images/arthurs-point/image-3.jpeg",
-                    alt: "After 1"
+                    alt: "Freshly painted interior of Arthur's Point residence showcasing precision work"
                 }
             },  
             {
                 before: {
                     image: "/images/arthurs-point/ap-featureWall-before.jpg",
-                    alt: "Before 2"
+                    alt: "Arthur's Point living room before feature wall transformation"
                 },
                 after: {
                     image: "/images/arthurs-point/ap-featureWall-after.jpeg",
-                    alt: "After 2"
+                    alt: "Stunning feature wall in Arthur's Point living room after professional painting"
                 }
             },
             {
                 before: {
                     image: "/images/arthurs-point/ap-wallpaper-before.jpg",
-                    alt: "Before 3"
+                    alt: "Bedroom in Arthur's Point home before wallpaper installation"
                 },
                 after: {
                     image: "/images/arthurs-point/ap-wallpaper-after.jpeg",
-                    alt: "After 3"
+                    alt: "Elegant wallpapered bedroom in Arthur's Point residence after renovation"
                 }
             },
             {
                 after: {
                     image: "/images/arthurs-point/wallpaper-after.jpg",
-                    alt: "After 3"
+                    alt: "Close-up of expertly applied wallpaper in Arthur's Point home renovation"
                 }
             }
         ]
@@ -67,27 +66,27 @@ const projects = [
             {
                 before: {
                     image: "/images/mock-exterior-1/mock-exterior-image-1--before.jpg",
-                    alt: "Before 1"
+                    alt: "Weatherboard house exterior before professional repainting in Queenstown"
                 },
                 after: {
                     image: "/images/mock-exterior-1/mock-exterior-image-1--after.jpg",
-                    alt: "After 1"
+                    alt: "Freshly painted weatherboard house exterior with modern color scheme in Queenstown"
                 }
             },
             {
                 before: {
                     image: "/images/mock-exterior-1/mock-exterior-image-2--before.jpg",
-                    alt: "Before 2"
+                    alt: "Close-up of weatherboard siding showing peeling paint before renovation"
                 },
                 after: {
                     image: "/images/mock-exterior-1/mock-exterior-image-2--after.jpg",
-                    alt: "After 2"
+                    alt: "Detailed view of expertly painted weatherboard siding after professional treatment"
                 }
             },
             {
                 after: {
                     image: "/images/mock-exterior-1/mock-exterior-image-3--after.jpg",
-                    alt: "After 3"
+                    alt: "Beautifully painted exterior showcasing bold purple front door and garage trim"
                 }
             }
         ]

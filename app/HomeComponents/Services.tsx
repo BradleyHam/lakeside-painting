@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ServiceText from './ServiceText';
 
@@ -60,7 +60,12 @@ export default function Services() {
                 <div className='service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden'>
                         <div ref={exteriorImageRef} className='relative h-[300px]'>
-                            <Image src='/images/ldd-exterior.jpg' layout='fill' objectFit='cover' alt='Exterior Painting' />
+                            <Image 
+                                src='/images/ldd-exterior.jpg' 
+                                layout='fill' 
+                                objectFit='cover' 
+                                alt='Lakeside Painting expert exterior house painting in Queenstown, showcasing durable weatherproof finishes' 
+                            />
                         </div>
                     </div>
                     <ServiceText heading={ServiceData.exteriorPainting.heading} bulletPoints={ServiceData.exteriorPainting.bulletPoints} />
@@ -68,7 +73,12 @@ export default function Services() {
                 <div className=' service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden lg:order-1'>
                         <div ref={interiorImageRef} className='relative h-[300px]'>
-                            <Image src='/images/ldd-interior.jpg' layout='fill' objectFit='cover' alt='Interior Painting' />
+                            <Image 
+                                src='/images/ldd-interior.jpg' 
+                                layout='fill' 
+                                objectFit='cover' 
+                                alt='Lakeside Painting professional interior painting service in Queenstown, featuring stylish color schemes and flawless finishes' 
+                            />
                         </div>
                     </div>
                     <ServiceText heading={ServiceData.interiorPainting.heading} bulletPoints={ServiceData.interiorPainting.bulletPoints} />
