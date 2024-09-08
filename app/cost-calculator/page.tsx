@@ -124,7 +124,7 @@ const PaintingCostCalculator: React.FC = () => {
         </div>
       </div>
     </div>
-    <ProcessSection />
+    <ProcessSection bg='white'/>
     <FooterBanner />
     <Footer />
     </div>

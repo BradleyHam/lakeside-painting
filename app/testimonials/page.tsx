@@ -120,7 +120,7 @@ function TestimonialDisplay() {
           ))}
         </div>
       </div>
-      <ProcessSection />
+      <ProcessSection bg='white'/>
       <FooterBanner />
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import FiveStars from "../SiteComponents/FiveStars";
 
-export default function TestimonialCard({name, occupation, testimonial}: {name: string, occupation: string, testimonial: string}) {
+export default function TestimonialCard({name, testimonial}: {name: string, testimonial: string}) {
     return (
         <div className="flex flex-col  h-full bg-white shadow-lg lg:p-10 p-7">
             <div className="testionial-card-heading flex space-x-3">
@@ -17,7 +17,7 @@ export default function TestimonialCard({name, occupation, testimonial}: {name: 
             </p>
             <div className="text-primary flex flex-col mt-auto space-y-1 pt-[20px]">
                 <h3 className="text-sm lg:text-base font-semibold">{name}</h3>
-                <h4 className="text-xs lg:text-sm">{occupation}</h4>  
+               
             </div>
         </div>
     )
