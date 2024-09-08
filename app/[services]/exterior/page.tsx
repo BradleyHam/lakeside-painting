@@ -15,13 +15,13 @@ const houseTypes = [
       image: '/images/services/exterior/weatherboard.jpg',
       content: (
         <>
-          <p className="mb-2">Weatherboard homes are a Queenstown classic, and we've got the expertise to make them shine:</p>
+          <p className="mb-2">Weatherboard homes are a Queenstown classic, and we&apos;ve got the expertise to make them shine:</p>
           <ul className="list-disc list-inside mb-4">
             <li>Our team uses specialized primers designed to bond well with both old and new weatherboards</li>
             <li>We apply flexible, high-quality exterior paints that can withstand the natural expansion and contraction of the wood</li>
             <li>Extra attention is given to end-grain sealing and caulking joints to prevent moisture ingress</li>
-            <li>For uneven surfaces, we employ techniques like 'wet-edge' painting to ensure a smooth, consistent finish</li>
-            <li>We're skilled in both brush and spray application, choosing the best method for your specific weatherboards</li>
+            <li>For uneven surfaces, we employ techniques like &apos;wet-edge&apos; painting to ensure a smooth, consistent finish</li>
+            <li>We&apos;re skilled in both brush and spray application, choosing the best method for your specific weatherboards</li>
           </ul>
         </>
       ),
@@ -31,13 +31,13 @@ const houseTypes = [
       image: '/images/services/exterior/cedar.jpg',
       content: (
         <>
-          <p className="mb-2">Timber cladding requires special care to preserve its natural beauty while protecting it from Queenstown's elements:</p>
+          <p className="mb-2">Timber cladding requires special care to preserve its natural beauty while protecting it from Queenstown&apos;s elements:</p>
           <ul className="list-disc list-inside mb-4">
             <li>We begin with a gentle clean using specialized wood cleaners to remove dirt without damaging the timber</li>
             <li>For weathered timber, we use restoration techniques like sanding or chemical brightening to rejuvenate the wood</li>
-            <li>We're experts in applying both stains and clear sealers, enhancing the wood's natural grain</li>
+            <li>We&apos;re experts in applying both stains and clear sealers, enhancing the wood&apos;s natural grain</li>
             <li>For cedar, we use products specifically formulated to handle its unique properties and natural oils</li>
-            <li>Our team applies UV-resistant finishes to protect against Queenstown's intense sunlight</li>
+            <li>Our team applies UV-resistant finishes to protect against Queenstown&apos;s intense sunlight</li>
             <li>We use breathable finishes that allow the timber to naturally regulate moisture, preventing trapped dampness</li>
             <li>For a modern look, we can apply solid color paints using techniques that maintain the texture of the wood</li>
           </ul>
@@ -55,7 +55,7 @@ const houseTypes = [
             <li>Our team uses elastomeric paints that can bridge hairline cracks and move with the substrate</li>
             <li>We apply masonry primers to ensure excellent adhesion and longevity of the topcoat</li>
             <li>For textured plaster, we use techniques like back-rolling to ensure even coverage in all the nooks and crannies</li>
-            <li>We're skilled in both rolling and spraying applications, choosing the best method for your plaster's texture</li>
+            <li>We&apos;re skilled in both rolling and spraying applications, choosing the best method for your plaster&apos;s texture</li>
             <li>Our painters are trained in maintaining consistent texture when patching is required</li>
             <li>We use breathable paints that allow moisture to escape, preventing bubbling and peeling</li>
           </ul>
@@ -73,10 +73,10 @@ const houseTypes = [
             <li>Our team uses specialized masking techniques to protect the crisp lines of the vertical grooves</li>
             <li>We apply high-adhesion primers designed specifically for pre-primed fiber cement panels</li>
             <li>Our painters are skilled in both brush and roller techniques to achieve a smooth, even finish on large flat surfaces</li>
-            <li>We use low-sheen or satin finishes that highlight the panel's texture without emphasizing surface imperfections</li>
+            <li>We use low-sheen or satin finishes that highlight the panel&apos;s texture without emphasizing surface imperfections</li>
             <li>For the joints, we employ careful caulking and painting techniques to maintain a seamless look</li>
             <li>We can recommend and apply bold, modern colors that complement the contemporary style of Axon Panels</li>
-            <li>Our team is experienced in applying durable finishes that stand up to Queenstown's varied climate</li>
+            <li>Our team is experienced in applying durable finishes that stand up to Queenstown&apos;s varied climate</li>
           </ul>
         </>
       ),
@@ -109,15 +109,15 @@ function ExteriorPage() {
             <div className="order-1 md:order-2">
               <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>First Up</h4>
               <h2 className='text-base font-semibold mb-4'>Protecting Your Outdoor Space</h2>
-              <p className='text-sm mb-4'>Your home's exterior is its first line of defense against Queenstown's four seasons. Before we break out the brushes, we'll make sure everything's sorted:</p>
+              <p className='text-sm mb-4'>Your home&apos;s exterior is its first line of defense against Queenstown&apos;s four seasons. Before we break out the brushes, we&apos;ll make sure everything&apos;s sorted:</p>
               
               <ul className="mb-4 list-disc list-inside text-sm">
-                <li>We'll shift your outdoor furniture to a safe spot</li>
-                <li>Those prized plants? We'll cover them up nice and cozy</li>
+                <li>We&apos;ll shift your outdoor furniture to a safe spot</li>
+                <li>Those prized plants? We&apos;ll cover them up nice and cozy</li>
                 <li>Anything attached to the walls gets a protective wrap</li>
               </ul>
               <p className="text-sm">
-                It's all about keeping your outdoor area as pristine as those Wakatipu views. No worries, no hassles - that's how we roll.
+                It&apos;s all about keeping your outdoor area as pristine as those Wakatipu views. No worries, no hassles - that&apos;s how we roll.
               </p>
             </div>
           </div>
@@ -141,14 +141,14 @@ function ExteriorPage() {
               <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>Prepping Your Walls </h4>
             <h2 className='text-base font-semibold mb-4'>The Crucial Bit Most Folks Forget</h2>
              
-              <p className='mb-4' >Right, let's get your walls ready for their new look. Queenstown weather can be tough on exteriors, so we'll:</p>
+              <p className='mb-4' >Right, let&apos;s get your walls ready for their new look. Queenstown weather can be tough on exteriors, so we&apos;ll:</p>
               <ul className="list-disc list-inside text-sm">
                 <li>Give everything a good clean - no grime left behind</li>
-                <li>Scrape off any peeling paint - it's got to go</li>
-                <li>Replace any rotted wood - can't paint over problems</li>
+                <li>Scrape off any peeling paint - it&apos;s got to go</li>
+                <li>Replace any rotted wood - can&apos;t paint over problems</li>
                 <li>Fill up those cracks and gaps - smooth as</li>
                 <li>Sand it all down - for that perfect finish</li>
-                <li>Chuck on some quality primer - it's the key to long-lasting color</li>
+                <li>Chuck on some quality primer - it&apos;s the key to long-lasting color</li>
               </ul>
             </div>
           </div>
@@ -237,14 +237,14 @@ function ExteriorPage() {
             <div className='order-1 lg:order-1 mb-8 lg:mb-0'>
               <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>The Clean-Up</h4>
               <h2 className='text-base font-semibold mb-4'>Leaving Your Place Better Than We Found It</h2>
-              <p className='text-sm mb-4'>We reckon the job's not done until everything's spick and span. Here's our post-paint routine:</p>
+              <p className='text-sm mb-4'>We reckon the job&apos;s not done until everything&apos;s spick and span. Here&apos;s our post-paint routine:</p>
               <ul className="list-disc list-inside text-sm mb-8">
                 <li>Pack up all our gear and any leftover materials</li>
                 <li>Give your outdoor area a good sweep and tidy</li>
                 <li>Put all your outdoor bits and bobs back where they belong</li>
-                <li>One last walk around to make sure you're chuffed with the result</li>
+                <li>One last walk around to make sure you&apos;re chuffed with the result</li>
               </ul>
-              <p className="text-sm mb-6">Ready to give your Queenstown home a facelift? Give us a bell for a free quote. Whether it's a quick refresh or a complete color change, we'll make your place the talk of the town (in a good way, of course).</p>
+              <p className="text-sm mb-6">Ready to give your Queenstown home a facelift? Give us a bell for a free quote. Whether it&apos;s a quick refresh or a complete color change, we&apos;ll make your place the talk of the town (in a good way, of course).</p>
             </div>
             <div className='order-2 lg:order-2'>
               <div className="p-3 bg-white shadow-xl">

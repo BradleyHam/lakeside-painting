@@ -22,7 +22,7 @@ const LeftSide = ({ selectedDate, selectedTimeSlot, showForm }) => {
         {!bothSelected && (
           <>
             <h2 className="text-lg font-bold mb-4 mt-4">Welcome to Our Booking System</h2>
-            <p>Please select a convenient date and time for a phone consultation with one of our experts. We'll discuss your painting needs and provide personalized service recommendations.</p>
+            <p>Please select a convenient date and time for a phone consultation with one of our experts. We&apos;ll discuss your painting needs and provide personalized service recommendations.</p>
             </>
         )}
       </div>

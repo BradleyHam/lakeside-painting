@@ -94,7 +94,7 @@ export default function ExistingBooking() {
       )}
       {pendingBooking && (
         <p className="mb-4">
-          You're attempting to book a new appointment on {new Date(pendingBooking.date).toLocaleDateString()} at {pendingBooking.timeSlot}.
+          You&apos;re attempting to book a new appointment on {new Date(pendingBooking.date).toLocaleDateString()} at {pendingBooking.timeSlot}.
         </p>
       )}
       <p className="mb-4">
