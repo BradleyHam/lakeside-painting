@@ -41,7 +41,7 @@ export default function Footer() {
                     </nav>
                 </div>
                 <div className="flex flex-col">
-                <div className="flex space-x-1 mb-4">
+                    <div className="flex space-x-1 mb-4">
                         <a href="#" aria-label="Instagram"><AiFillInstagram size={24} /></a>
                         <a href="#" aria-label="Facebook"><RiFacebookFill size={24} /></a>
                     </div>
@@ -49,10 +49,6 @@ export default function Footer() {
                         <p><span className="font-semibold">Phone:</span> 0226132936</p>
                         <p className="break-words"><span className="font-semibold">Email:</span> bradleyjamesham@gmail.com</p>
                     </div>
-                    {/* <div className="flex space-x-2 mt-4">
-                        <a href="#" aria-label="Instagram"><AiFillInstagram size={24} /></a>
-                        <a href="#" aria-label="Facebook"><RiFacebookFill size={24} /></a>
-                    </div> */}
                 </div>
             </div>
             <div className="border-t border-primary/10 py-4 px-5 lg:px-20">
