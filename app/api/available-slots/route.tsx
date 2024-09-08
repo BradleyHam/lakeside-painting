@@ -5,7 +5,7 @@ import { zonedTimeToUtc, utcToZonedTime, format } from 'date-fns-tz';
 const oauth2Client = new google.auth.OAuth2(
   process.env.GOOGLE_CLIENT_ID,
   process.env.GOOGLE_CLIENT_SECRET,
-  `${process.env.NEXTAUTH_URL}/api/auth/callback`
+  process.env.REDIRECT_URI
 );
 
 oauth2Client.setCredentials({
@@ -15,6 +15,11 @@ oauth2Client.setCredentials({
 const calendar = google.calendar({ version: 'v3', auth: oauth2Client });
 
 export async function GET(request: Request) {
+  console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? 'Set' : 'Not set');
+  console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET ? 'Set' : 'Not set');
+  console.log('REDIRECT_URI:', process.env.REDIRECT_URI);
+  console.log('GOOGLE_REFRESH_TOKEN:', process.env.GOOGLE_REFRESH_TOKEN ? 'Set' : 'Not set');
+
   const { searchParams } = new URL(request.url);
   const date = searchParams.get('date');
 
@@ -44,8 +49,11 @@ export async function GET(request: Request) {
     const availableSlots = calculateAvailableSlots(events.data.items || [], date);
     return NextResponse.json(availableSlots);
   } catch (error) {
-    console.error('Error fetching calendar events', error);
-    return NextResponse.json({ error: 'Error fetching available slots' }, { status: 500 });
+    console.error('Error fetching calendar events:', error);
+    return NextResponse.json({ 
+      error: 'Error fetching available slots',
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 });
   }
 }
 
