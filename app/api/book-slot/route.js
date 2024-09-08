@@ -1,16 +1,17 @@
 import { google } from 'googleapis'
-import { getServerSession } from "next-auth/next"
 import { NextResponse } from 'next/server'
-import { authOptions } from '../auth/[...nextauth]/route'
 
 export async function POST(request) {
-  const session = await getServerSession(authOptions)
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const oauth2Client = new google.auth.OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_REDIRECT_URI
+  )
 
-  const oauth2Client = new google.auth.OAuth2()
-  oauth2Client.setCredentials({ access_token: session.accessToken })
+  // Set credentials using the refresh token
+  oauth2Client.setCredentials({
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN
+  })
 
   const calendar = google.calendar({ version: 'v3', auth: oauth2Client })
   const { startTime, endTime, summary, description } = await request.json()
