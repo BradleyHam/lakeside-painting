@@ -95,7 +95,7 @@ export default function Hero() {
                         <h2 className="font-poppins text-base lg:text-base text-white/80  mb-8">
                             Elevate Your Queenstown Property&apos;s Value and Appeal
                         </h2>
-                        <ButtonCta text='Book a Free Consultation' type={1} className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" />
+                        <ButtonCta text='Book a Free Consultation' type={1} className="" />
                         <div className="mt-0">
                             <HeroTestimonials />
                         </div>
@@ -141,7 +141,7 @@ export default function Hero() {
                                             <button
                                                 key={index}
                                                 onClick={() => setCurrentSlider(index)}
-                                                className={`w-3 h-3 rounded-full transition-all ${
+                                                className={`w-3 h-3  transition-all rounded-full ${
                                                     index === currentSlider
                                                         ? 'bg-white scale-125'
                                                         : 'bg-white/50 hover:bg-white/70'

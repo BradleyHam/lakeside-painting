@@ -107,6 +107,7 @@ export default function Project({ params }: { params: { project: string } }) {
     .slice(0, 3);
 
   return (
+  
     <div className=''>
       <ModalClientManager>
         <Navbar />

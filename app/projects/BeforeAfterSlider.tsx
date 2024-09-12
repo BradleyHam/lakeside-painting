@@ -32,6 +32,7 @@ export default function BeforeAfterSlider({
     const [canAnimate, setCanAnimate] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
     const handleRef = useRef<HTMLDivElement>(null);
+    const sliderRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setSliderPosition(initialPosition);
@@ -59,6 +60,24 @@ export default function BeforeAfterSlider({
             }, 5000);
         }
     }, [canAnimate]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                showTooltipAnimation(); // Trigger tooltip animation when in view
+            }
+        }, { threshold: 0.1 }); // Adjust threshold as needed
+
+        if (sliderRef.current) {
+            observer.observe(sliderRef.current);
+        }
+
+        return () => {
+            if (sliderRef.current) {
+                observer.unobserve(sliderRef.current);
+            }
+        };
+    }, [showTooltipAnimation]);
 
     const handleMouseEnter = useCallback(() => {
         showTooltipAnimation();
@@ -133,8 +152,8 @@ export default function BeforeAfterSlider({
     return (
         <div className={`relative ${bgColor} p-2 h-full w-full  overflow-hidden shadow-xl`}>
             <div 
-                ref={containerRef} 
-                className="relative h-full w-full overflow-hidden "
+                ref={sliderRef} // Attach ref to the slider container
+                className="relative h-full w-full overflow-hidden"
                 onMouseEnter={handleMouseEnter}
                 onMouseDown={handleMouseDown}
                 onTouchStart={handleTouchStart}
