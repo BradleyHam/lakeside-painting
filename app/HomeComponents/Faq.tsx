@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import SectionHeading from '../SiteComponents/SectionHeading';
 
 // Updated array of FAQs
 const faqData = [
@@ -39,81 +40,87 @@ const FAQ = () => {
   };
 
   return (
-    <div className="px-side-spacing py-section-spacing bg-light-bg/10 flex flex-col items-center">
-        <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>FAQ </h4>
-        <h2 className='text-base font-semibold  text-center mb-12'>Get answers to the questions we hear a lot</h2>
-                     
-      
-      <div className="lg:max-w-[70%] container mx-auto flex flex-col space-y-3">
-        {faqData.map((faq, index) => (
-          <div 
-            key={index} 
-            className="faq-card border border-1 px-5 lg:px-8 py-5 lg:py-7 rounded bg-white cursor-pointer"
-            onClick={() => toggleFAQ(index)}
-          >
-            <div className="flex justify-between items-center">
-              <p className="font-semibold text-sm pr-4">
-                {faq.question}
-              </p>
-              <div className='w-[20px] h-[20px] relative flex-shrink-0'>
-                <AnimatePresence initial={false} mode="wait">
-                  {activeIndex === index ? (
-                    <motion.div
-                      key="minus"
-                      initial={{ opacity: 0, rotate: -90 }}
-                      animate={{ opacity: 1, rotate: 0 }}
-                      exit={{ opacity: 0, rotate: 90 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute inset-0 flex items-center justify-center"
-                    >
-                      <FaMinus className="text-primary" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="plus"
-                      initial={{ opacity: 0, rotate: 90 }}
-                      animate={{ opacity: 1, rotate: 0 }}
-                      exit={{ opacity: 0, rotate: -90 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute inset-0 flex items-center justify-center"
-                    >
-                      <FaPlus className="text-primary" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+    <section className="relative px-side-spacing py-section-spacing bg-light-bg/10">
+     
+     
+      <div className="relative z-10 flex flex-col items-center ">
+        <SectionHeading 
+          subtitle="FAQ" 
+          title="Get answers to the questions we hear a lot" 
+          type={1}
+        />
+        
+        <div className="lg:max-w-[70%] container mx-auto flex flex-col space-y-2 lg:space-y-3">
+          {faqData.map((faq, index) => (
+            <div 
+              key={index} 
+              className="faq-card border border-1 px-5 lg:px-8 py-5 lg:py-7 rounded bg-white cursor-pointer"
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="flex justify-between items-center">
+                <p className="font-semibold text-sm pr-4">
+                  {faq.question}
+                </p>
+                <div className='w-[20px] h-[20px] relative flex-shrink-0'>
+                  <AnimatePresence initial={false} mode="wait">
+                    {activeIndex === index ? (
+                      <motion.div
+                        key="minus"
+                        initial={{ opacity: 0, rotate: -90 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: 90 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute inset-0 flex items-center justify-center"
+                      >
+                        <FaMinus className="text-primary" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="plus"
+                        initial={{ opacity: 0, rotate: 90 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: -90 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute inset-0 flex items-center justify-center"
+                      >
+                        <FaPlus className="text-primary" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
-            </div>
-            <AnimatePresence initial={false}>
-              {activeIndex === index && (
-                <motion.div
-                  initial="collapsed"
-                  animate="expanded"
-                  exit="collapsed"
-                  variants={{
-                    expanded: { opacity: 1, height: 'auto' },
-                    collapsed: { opacity: 0, height: 0 }
-                  }}
-                  transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  className="overflow-hidden"
-                >
+              <AnimatePresence initial={false}>
+                {activeIndex === index && (
                   <motion.div
+                    initial="collapsed"
+                    animate="expanded"
+                    exit="collapsed"
                     variants={{
-                      expanded: { opacity: 1, y: 0 },
-                      collapsed: { opacity: 0, y: -10 }
+                      expanded: { opacity: 1, height: 'auto' },
+                      collapsed: { opacity: 0, height: 0 }
                     }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    className="overflow-hidden"
                   >
-                    <p className="text-primary/60 mt-4 text-sm">
-                      {faq.answer}
-                    </p>
+                    <motion.div
+                      variants={{
+                        expanded: { opacity: 1, y: 0 },
+                        collapsed: { opacity: 0, y: -10 }
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <p className="text-primary/60 mt-4 text-sm">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -12,7 +12,7 @@ export type Project = {
   imageUrls: string;
   tags: string[];
   imageShowcase: {
-      before: {
+      before?: {
           image: string;
           alt: string;
       };

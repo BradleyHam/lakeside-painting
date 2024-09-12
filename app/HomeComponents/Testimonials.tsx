@@ -1,4 +1,6 @@
 import TestimonialCard from "./TestimonialCard";
+import SectionHeading from '../SiteComponents/SectionHeading';
+import ButtonSeeMore from '../SiteComponents/ButtonSeeMore';
 
 const testimonials = [
     {
@@ -21,21 +23,28 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <div className="testimonials bg-light-bg/10 flex flex-col items-center mx-auto px-side-spacing py-section-spacing">
-              <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>Testimonials </h4>
-              <h2 className='text-base font-semibold mb-12 text-center'>See what our clients are saying about us </h2>
-              
-            <div className='container  flex flex-col lg:flex-row items-stretch space-y-6  lg:space-y-0 lg:space-x-4'>
-                {
-                    testimonials.map((item, index) => (
-                        <div key={index}className="lg:w-1/2">
-                            <TestimonialCard  {...item}/>
+        <section className="relative px-side-spacing py-section-spacing bg-light-bg/10">
+            {/* Skewed background element */}
+           
+            
+            <div className="testimonials flex flex-col items-center mx-auto relative z-10 mb-12">
+                <SectionHeading 
+                  subtitle="Testimonials" 
+                  title="See what our clients are saying about us" 
+                  type={1}
+                />
+                
+                <div className='container flex flex-col lg:flex-row items-stretch space-y-6 lg:space-y-0 lg:space-x-4'>
+                    {testimonials.map((item, index) => (
+                        <div key={index} className="lg:w-1/2">
+                            <TestimonialCard {...item}/>
                         </div>
-                    ))
-                    
-                }
-              
+                    ))}
+                </div>
             </div>
-        </div>
+            <div className="flex lg:justify-center">
+            <ButtonSeeMore label='Read More Testimonials' />
+            </div>
+        </section>
     )
 }

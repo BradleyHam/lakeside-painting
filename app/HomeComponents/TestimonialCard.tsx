@@ -3,11 +3,14 @@ import FiveStars from "../SiteComponents/FiveStars";
 
 export default function TestimonialCard({name, testimonial}: {name: string, testimonial: string}) {
     return (
-        <div className="flex flex-col  h-full bg-white shadow-lg lg:p-10 p-7">
-            <div className="testionial-card-heading flex space-x-3">
+        <div className="flex flex-col  h-full bg-white shadow-lg  p-6 lg:p-7">
+            <div className="testionial-card-heading flex space-x-3 mb-[12px]">
                 <div className="flex space-x-3 items-start justify-between w-full">
-                    <FiveStars />
-                    <div className="text-primary/30 -translate-y-3 translate-x-1">
+                    <div className="flex flex-col space-y-3">
+                        <h3 className="text-sm lg:text-sm font-semibold">{name}</h3>
+                        <FiveStars />
+                    </div>
+                    <div className="text-primary/30  translate-x-1">
                          <BiSolidQuoteAltRight size={40} color='' />
                     </div>    
                 </div>
@@ -16,10 +19,8 @@ export default function TestimonialCard({name, testimonial}: {name: string, test
                 {testimonial}
             </p>
             <div className="text-primary flex flex-col mt-auto space-y-1 pt-[20px]">
-                <h3 className="text-sm lg:text-base font-semibold">{name}</h3>
-               
+                {/* Other content can go here if needed */}
             </div>
         </div>
     )
 }
- 

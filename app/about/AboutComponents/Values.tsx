@@ -2,9 +2,9 @@ import Value from './Value'
 import { SiTrustpilot } from 'react-icons/si'
 import { FaBookOpen, FaHandshakeSimple } from 'react-icons/fa6'
 import { FaLeaf } from 'react-icons/fa'
+import SectionHeading from '@/app/SiteComponents/SectionHeading';
 
 const iconSize = 30;
-
 
 const values = [
     {   
@@ -28,18 +28,22 @@ const values = [
         icon: <FaHandshakeSimple size={iconSize}/>
     }
 ]
-export default function Values(){
-    return(
+
+export default function Values() {
+    return (
         <div className="">
             <div className="flex flex-col items-center px-5 container mx-auto py-[80px] ">
-            <h4 className='text-xs uppercase tracking-widest text-primary font-medium mb-2'>Our Values</h4>
-              <h2 className='text-base font-semibold mb-4'>What Drives Us</h2>
-              
-                <div className="values flex flex-col items-stretch  pt-12 w-full lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6">
-                   { values.map((value, index) => <Value key={index} value={value.value} description={value.description} icon={value.icon}/>) }
-           
+                <SectionHeading 
+                    subtitle='Our Values' 
+                    title='What Drives Us' 
+                    type={1} 
+                />
+                <div className="values flex flex-col items-stretch  w-full lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6">
+                    {values.map((value, index) => (
+                        <Value key={index} value={value.value} description={value.description} icon={value.icon} />
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }

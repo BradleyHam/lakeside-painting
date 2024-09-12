@@ -1,5 +1,5 @@
-'use client'
-import React, { useState } from 'react';
+import React from 'react';
+import { Metadata } from 'next';
 import { format } from 'date-fns';
 import Navbar from '@/app/SiteComponents/Navbar';
 import TestimonialCard from '@/app/HomeComponents/TestimonialCard';
@@ -7,6 +7,20 @@ import TopBanner from '@/app/SiteComponents/TopBanner';
 import FooterBanner from '../SiteComponents/FooterBanner';
 import ProcessSection from '../HomeComponents/ProcessSection';
 import Footer from '../SiteComponents/Footer';
+
+export const metadata: Metadata = {
+  title: 'Client Testimonials | Lakeside Painting Queenstown',
+  description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Queenstown, New Zealand.',
+  keywords: 'testimonials, client reviews, Lakeside Painting, house painters, Queenstown, New Zealand',
+  openGraph: {
+    title: 'Client Testimonials | Lakeside Painting Queenstown',
+    description: 'Read what our satisfied clients say about Lakeside Painting\'s professional house painting and decorating services in Queenstown, New Zealand.',
+    url: 'https://www.lakesidepainting.co.nz/testimonials',
+    type: 'website',
+    locale: 'en_NZ',
+    siteName: 'Lakeside Painting',
+  },
+}
 
 interface Testimonial {
   id: number;
@@ -54,33 +68,21 @@ const mockTestimonials: Testimonial[] = [
   }
 ];
 
-function TestimonialDisplay() {
-  const [testimonials] = useState(mockTestimonials);
-
-  if (!testimonials || testimonials.length === 0) {
-    return (
-      <div className="max-w-4xl mx-auto p-4 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-primary">Client Testimonials</h2>
-        <p className="text-gray-600">No testimonials available at the moment. Check back later!</p>
-      </div>
-    );
-  }
-
-  const sortedTestimonials = [...testimonials].sort((a, b) => b.date.getTime() - a.date.getTime());
+export default function TestimonialPage() {
+  const sortedTestimonials = [...mockTestimonials].sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
-    <div>
+    <>
       <Navbar />
       <TopBanner 
         headingSmall='Testimonials'
         headingLarge="Queenstown's Trusted Painters: See What Our Clients Say"
       />
       
-      <div className="mx-auto p-4  bg-light-bg/10 pb-[120px] pt-[120px]">
-     
+      <main className="mx-auto p-4 bg-light-bg/10 py-[80px] lg:pb-[120px] lg:pt-[120px]">
         <div className="relative">
           {/* Vertical timeline line - hidden on mobile */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 " />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200" />
           
           {sortedTestimonials.map((testimonial, index) => (
             <div
@@ -119,12 +121,10 @@ function TestimonialDisplay() {
             </div>
           ))}
         </div>
-      </div>
+      </main>
       <ProcessSection bg='white'/>
       <FooterBanner />
       <Footer />
-    </div>
+    </>
   );
 }
-
-export default TestimonialDisplay;

@@ -34,7 +34,7 @@ function Projects({ projects }: { projects: Project[] }) {
 
   return (
     <div className=''>
-      <div className='flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:items-start  px-side-spacing py-section-spacing'>
+      {/* <div className='flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:items-start  px-side-spacing py-section-spacing'>
         <p className='text-md text-primary opacity-80 lg:flex-1 lg:order-2 leading-relaxed'>
           Explore our portfolio of painting projects. From interior repaints to exterior transformations, browse our work to see how we can enhance your space. Use the filter to find projects that match your needs and inspire your next home improvement
         </p>
@@ -45,9 +45,9 @@ function Projects({ projects }: { projects: Project[] }) {
             <FilterBar categories={categoryTitles} onFilterChange={setFilteredCategory} />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-side-spacing py-section-spacing bg-light-bg/20 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-side-spacing py-section-spacing bg-light-bg/10 ">
   {displayedProjects.length === 0 ? (
     <p className="col-span-full italic text-sm text-red-900">No projects match the selected filters</p>
   ) : (

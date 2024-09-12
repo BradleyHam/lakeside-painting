@@ -23,7 +23,7 @@ export default function Footer() {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-base font-semibold mb-4">Quick Links</h3>
+                    <h3 className="text-base font-semibold mb-4 tracking-tight">Quick Links</h3>
                     <nav className="flex flex-col space-y-2">
                         <Link href="/"><span className={`${navItemStyle} ${pathname === '/' ? 'font-bold' : ''}`}>Home</span></Link>
                         <Link href="/about"><span className={`${navItemStyle} ${pathname === '/about' ? 'font-bold' : ''}`}>About</span></Link>
@@ -34,7 +34,7 @@ export default function Footer() {
                     </nav>
                 </div>
                 <div className="flex flex-col">
-                    <h3 className="text-base font-semibold mb-4">Services</h3>
+                    <h3 className="text-base font-semibold mb-4 tracking-tight">Services</h3>
                     <nav className="flex flex-col space-y-2">
                         <Link href="/services/interior"><span className={`${navItemStyle} ${pathname === '/services/interior' ? 'font-bold' : ''}`}>Interior</span></Link>
                         <Link href="/services/exterior"><span className={`${navItemStyle} ${pathname === '/services/exterior' ? 'font-bold' : ''}`}>Exterior</span></Link>

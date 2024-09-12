@@ -55,8 +55,8 @@ export default function Services() {
     }, []);
 
     return (
-        <div className='bg py-section-spacing px-side-spacing'>
-            <div className='services space-y-12'>
+        <div className=' py-section-spacing px-side-spacing'>
+            <div className='services space-y-12 relative'>
                 <div className='service flex flex-col lg:flex-row'>
                     <div className='lg:w-2/3 overflow-hidden'>
                         <div ref={exteriorImageRef} className='relative h-[300px]'>

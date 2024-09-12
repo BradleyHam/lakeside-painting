@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ButtonCta from "../SiteComponents/ButtonCta";
 import HeroTestimonials from "./HeroTestimonials";
 import BeforeAfterSlider from "../projects/BeforeAfterSlider";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const sliderData = [
@@ -34,7 +35,7 @@ export default function Hero() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowTooltip(true);
-        }, 300); // Reduced to 1 second delay
+        }, 300);
 
         return () => clearTimeout(timer);
     }, []);
@@ -48,98 +49,161 @@ export default function Hero() {
     };
 
     const fadeVariants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
     };
 
     return (
-        <div className="hero-container relative w-full">
-            <div className="flex flex-col lg:flex-row items-center px-side-spacing py-[60px]">
-                <div className="text-white flex flex-col items-start w-full lg:w-1/2">
-                    <div className="flex flex-col mb-[32px]">
-                        <h1 className="font-bold  text-white text-lg">
-                            Professional Painting in Queenstown
+        <section className="relative overflow-hidden bg-gradient-to-tr from-primary to-primary/90 pt-section-spacing px-side-spacing pb-[80px] ">
+            
+            {/* skwewd element */}
+            <div className="absolute -bottom-[24px] left-0 right-0 z-10 bg-white h-[50px] -skew-y-1   "></div>
+            {/* Brush stroke background */}
+            <div className="absolute left-12 lg:left-[300px] h-[600px] w-[1200px] -right-12  top-12  lg:-bottom-26 lg:w-[1400px] lg:h-[600px]">
+            <Image className="" src="/images/decorative/brushStroke.svg" alt="Decorative brush stroke" layout="fill" objectFit="contain" />
+            </div>
+           <div className="absolute inset-20 opacity-20">
+                {/* <svg className="w-full h-full -mt-20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="centerFade" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+                            <stop offset="0%" stopColor="white" stopOpacity="1"/>
+                            <stop offset="70%" stopColor="white" stopOpacity="1"/>
+                            <stop offset="100%" stopColor="white" stopOpacity="0"/>
+                        </radialGradient>
+                        <mask id="fadeMask">
+                            <rect width="100" height="100" fill="url(#centerFade)" />
+                        </mask>
+                    </defs>
+                    <g mask="url(#fadeMask)">
+                        <line x1="0" y1="0" x2="100" y2="100" stroke="white" strokeWidth="0.3" />
+                        <line x1="100" y1="0" x2="0" y2="100" stroke="white" strokeWidth="0.3" />
+                    </g>
+                </svg> */}
+            </div>
+            <div className="relative z-20">
+                <div className="flex flex-col lg:flex-row items-start justify-between">
+                    <motion.div 
+                        className="text-white flex flex-col items-start w-full lg:w-[45%] lg:pr-6 mb-8 lg:mb-0"
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeVariants}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        <h1 className="font-poppins tracking-tight text-lg lg:text-xl font-bold text-white leading-normal mb-4">
+                            Transform Your Space with <br></br> <span className="text-accent">Professional Painting</span>
                         </h1>
-                        <h2 className="opacity-80 text-white font-medium capitalize leading-normal mt-[16px] text-base">
-                            Increase the Value of Your Property
+                        <h2 className="font-poppins text-base lg:text-base text-white/80  mb-8">
+                            Elevate Your Queenstown Property's Value and Appeal
                         </h2>
-                    </div>
-                    <ButtonCta text='book a consultation' type={1}/>
-                    <HeroTestimonials />
-                </div>
-                <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-                    <div className="relative">
-                        <div className="bg-white shadow-xl p-2 h-[350px] lg:h-[350px] w-full">
-                            <div className="w-full h-full border-2 border-white relative overflow-hidden">
-                                <AnimatePresence mode="wait" initial={false}>
-                                    <motion.div
-                                        key={currentSlider}
-                                        variants={fadeVariants}
-                                        initial="hidden"
-                                        animate="visible"
-                                        exit="hidden"
-                                        transition={{ duration: 0.5 }}
-                                        className="absolute inset-0"
-                                    >
-                                        <BeforeAfterSlider  
-                                            beforeImage={sliderData[currentSlider].beforeImage}
-                                            afterImage={sliderData[currentSlider].afterImage}
-                                            beforeAlt={sliderData[currentSlider].beforeAlt}
-                                            afterAlt={sliderData[currentSlider].afterAlt}
-                                            initialPosition={100} // Start with "after" image fully visible
-                                            showInitialTooltip={true} // Enable initial tooltip animation
+                        <ButtonCta text='Book a Free Consultation' type={1} className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" />
+                        <div className="mt-0">
+                            <HeroTestimonials />
+                        </div>
+                    </motion.div>
+                    <motion.div 
+                        className="w-full lg:w-[55%]"
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeVariants}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                        <div className="relative flex flex-col">
+                            {/* Slider container */}
+                            <div className="relative">
+                                <div className="rounded-lg overflow-hidden aspect-[4/3] w-full max-w-[650px] max-h-[350px]">
+                                    <AnimatePresence mode="wait" initial={false}>
+                                        <motion.div
+                                            key={currentSlider}
+                                            variants={fadeVariants}
+                                            initial="hidden"
+                                            animate="visible"
+                                            exit="hidden"
+                                            transition={{ duration: 0.5 }}
+                                            className="absolute inset-0"
+                                        >
+                                            <BeforeAfterSlider  
+                                                beforeImage={sliderData[currentSlider].beforeImage}
+                                                afterImage={sliderData[currentSlider].afterImage}
+                                                beforeAlt={sliderData[currentSlider].beforeAlt}
+                                                afterAlt={sliderData[currentSlider].afterAlt}
+                                                initialPosition={50}
+                                                hero={true}
+                                                showInitialTooltip={showTooltip}
+                                            />
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </div>
+
+                                {/* Desktop controls (left side) */}
+                                <div className="absolute -left-28 bottom-0 hidden lg:flex flex-col items-end space-y-4">
+                                    <div className="flex flex-col items-center space-y-2">
+                                        {sliderData.map((_, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setCurrentSlider(index)}
+                                                className={`w-3 h-3 rounded-full transition-all ${
+                                                    index === currentSlider
+                                                        ? 'bg-white scale-125'
+                                                        : 'bg-white/50 hover:bg-white/70'
+                                                }`}
+                                                aria-label={`Go to slide ${index + 1}`}
+                                            />
+                                        ))}
+                                    </div>
+                                    <div className="flex space-x-2">
+                                        <button 
+                                            onClick={handlePrev}
+                                            className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            disabled={currentSlider === 0}
+                                        >
+                                            <ChevronLeft className="w-6 h-6 text-primary" />
+                                        </button>
+                                        <button 
+                                            onClick={handleNext}
+                                            className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            disabled={currentSlider === sliderData.length - 1}
+                                        >
+                                            <ChevronRight className="w-6 h-6 text-primary" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Mobile controls (below slider) */}
+                            <div className="flex flex-row items-center justify-between mt-8 lg:hidden">
+                                <button 
+                                    onClick={handlePrev}
+                                    className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    disabled={currentSlider === 0}
+                                >
+                                    <ChevronLeft className="w-6 h-6 text-primary" />
+                                </button>
+                                <div className="flex items-center space-x-2">
+                                    {sliderData.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => setCurrentSlider(index)}
+                                            className={`w-3 h-3 rounded-full transition-all ${
+                                                index === currentSlider
+                                                    ? 'bg-white scale-125'
+                                                    : 'bg-white/50 hover:bg-white/70'
+                                            }`}
+                                            aria-label={`Go to slide ${index + 1}`}
                                         />
-                                    </motion.div>
-                                </AnimatePresence>
-                            </div>
-                        </div>
-                        {/* Desktop controls */}
-                        <div className="absolute bottom-0 left-0 transform -translate-x-full lg:-translate-x-[100%] hidden lg:flex flex-col items-end">
-                            <div className="text-sm font-medium text-white/80 mb-4 mr-4">
-                                {currentSlider + 1} / {sliderData.length}
-                            </div>
-                            <div className="flex items-center">
-                                <button 
-                                    onClick={handlePrev}
-                                    className={`p-4 bg-white shadow-md transition-all ${currentSlider === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 active:bg-gray-200'}`}
-                                    disabled={currentSlider === 0}
-                                >
-                                    <ChevronLeft className="w-4 h-4 text-gray-800" />
-                                </button>
+                                    ))}
+                                </div>
                                 <button 
                                     onClick={handleNext}
-                                    className={`p-4 bg-white shadow-md transition-all ${currentSlider === sliderData.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 active:bg-gray-200'}`}
+                                    className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={currentSlider === sliderData.length - 1}
                                 >
-                                    <ChevronRight className="w-4 h-4 text-gray-800" />
+                                    <ChevronRight className="w-6 h-6 text-primary" />
                                 </button>
                             </div>
                         </div>
-                        {/* Mobile controls */}
-                        <div className="mt-4 flex items-center justify-between lg:hidden">
-                            <div className="text-sm font-medium text-white/80">
-                                {currentSlider + 1} / {sliderData.length}
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <button 
-                                    onClick={handlePrev}
-                                    className={`p-3 bg-white shadow-md transition-all ${currentSlider === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 active:bg-gray-200'}`}
-                                    disabled={currentSlider === 0}
-                                >
-                                    <ChevronLeft className="w-5 h-5 text-gray-800" />
-                                </button>
-                                <button 
-                                    onClick={handleNext}
-                                    className={`p-3 bg-white shadow-md  transition-all ${currentSlider === sliderData.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 active:bg-gray-200'}`}
-                                    disabled={currentSlider === sliderData.length - 1}
-                                >
-                                    <ChevronRight className="w-5 h-5 text-gray-800" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

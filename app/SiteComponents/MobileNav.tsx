@@ -23,45 +23,50 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
 
         if (open) {
             tl.fromTo(mobileNavRef.current, { y: -650 }, { duration: 0.5, y: 0, ease: "power1.out" })
-              .to(listItemRefs.current, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power1.out" }, "-=0.3")
+              .to(listItemRefs.current, {
+                  opacity: (i) => pathname === listItemRefs.current[i]?.getAttribute('data-path') ? 1 : 0.7,
+                  y: 0,
+                  duration: 0.5,
+                  stagger: 0.1,
+                  ease: "power1.out"
+              }, "-=0.3")
               .to(buttonRef.current, { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" }, "-=0.3");
         } else if (!open) {
             tl.to(buttonRef.current, { opacity: 0, y: 20, duration: 0.5, ease: "power1.out" })
               .to(listItemRefs.current, { opacity: 0, y: 20, duration: 0.5, stagger: -0.1, ease: "power1.out" }, "-=0.3")
               .fromTo(mobileNavRef.current, { y: 0 }, { duration: 0.5, y: -650, ease: "power1.out" }, '-=.3');
         }
-    }, [open, onClose]);
+    }, [open, onClose, pathname]);
+
+    const isActive = (path: string) => pathname === path || (path === '/projects' && pathname.startsWith('/projects'));
 
     return (
         <ul ref={mobileNavRef} className='mobile-nav z-40 fixed bg-primary h-screen flex flex-col justify-center w-screen items-start px-8 space-y-4 uppercase tracking-wider text-sm lg:hidden inset-0 text-white'>
             <div className="absolute top-8 right-12 cursor-pointer">
-            <IoClose onClick={handleToggle} size={25} /> 
+                <IoClose onClick={handleToggle} size={25} /> 
             </div>
            
-            <Link href="/" onClick={handleToggle}>
-                <li className={pathname === '/' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[0] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Home</li>
-            </Link>
-            <Link href="/about" onClick={handleToggle}>
-                <li className={pathname === '/about' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[1] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>About</li>
-            </Link>
-            <Link href="/services/interior" onClick={handleToggle}>
-                <li className={pathname === '/services/interior' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[2] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Interior Services</li>
-            </Link>
-            <Link href="/services/exterior" onClick={handleToggle}>
-                <li className={pathname === '/services/exterior' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[3] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Exterior Services</li>
-            </Link>
-            <Link href="/projects" onClick={handleToggle}>
-                <li className={pathname.startsWith('/projects') ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[4] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Projects</li>
-            </Link>
-            <Link href="/cost-calculator" onClick={handleToggle}>
-                <li className={pathname === '/cost-calculator' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[5] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Cost Calculator</li>
-            </Link>
-            <Link href="/testimonials" onClick={handleToggle}>
-                <li className={pathname === '/testimonials' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[6] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Testimonials</li>
-            </Link>
-            <Link href="/contact" onClick={handleToggle}>
-                <li className={pathname === '/contact' ? 'font-bold' : ''} ref={(el) => { listItemRefs.current[7] = el }} style={{ opacity: 0, transform: 'translateY(20px)' }}>Contact</li>
-            </Link>
+            {[
+                { path: '/', text: 'Home' },
+                { path: '/about', text: 'About' },
+                { path: '/services/interior', text: 'Interior Services' },
+                { path: '/services/exterior', text: 'Exterior Services' },
+                { path: '/projects', text: 'Projects' },
+                { path: '/cost-calculator', text: 'Cost Calculator' },
+                { path: '/testimonials', text: 'Testimonials' },
+                { path: '/contact', text: 'Contact' }
+            ].map((item, index) => (
+                <Link key={item.path} href={item.path} onClick={handleToggle}>
+                    <li 
+                        className={isActive(item.path) ? 'font-bold' : ''}
+                        ref={(el) => { listItemRefs.current[index] = el }}
+                        data-path={item.path}
+                        style={{ opacity: 0, transform: 'translateY(20px)' }}
+                    >
+                        {item.text}
+                    </li>
+                </Link>
+            ))}
             <div ref={buttonRef} className="pt-8 self-start" style={{ opacity: 0, transform: 'translateY(20px)' }}>
                 <ButtonCta text='Book a consultation' type={1} />
             </div>

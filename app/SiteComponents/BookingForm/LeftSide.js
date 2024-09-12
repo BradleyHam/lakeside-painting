@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import { IoMdTime } from "react-icons/io";
 import { BsCalendarDate } from "react-icons/bs";
+import Link from 'next/link';
 
 const LeftSide = ({ selectedDate, selectedTimeSlot, showForm }) => {
   const bothSelected = selectedDate && selectedTimeSlot;
@@ -10,8 +11,10 @@ const LeftSide = ({ selectedDate, selectedTimeSlot, showForm }) => {
   return (
     <div className='text-primary'>
       <div className="mb-4">
-        
-        <Image src='/images/logo.png' alt='logo' height={100} width={150}/>
+        <Link href="/">
+          <Image src='/images/logo.png' alt='logo' height={100} width={150}/>
+        </Link>
+
         {bothSelected && (
           <div className=" mt-4 flex flex-col space-y-2">
           

@@ -15,7 +15,7 @@ export default function ServiceText({heading, bulletPoints}: {heading: string, b
             </div>
 
             <Link href="/projects">
-             <ButtonSeeMore />
+             <ButtonSeeMore label="See Our Projects" />
             </Link>
         </div>    
     </>    

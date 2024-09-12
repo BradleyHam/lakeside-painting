@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 import ShortAbout from '../HomeComponents/ShortAbout';
 
 export const metadata: Metadata = {
-  title: 'About Lakeside Painting | Expert Painters in Queenstown',
+  title: 'About Lakeside Painting | Professional Painters in Queenstown',
   description: 'Learn about Lakeside Painting, Queenstown\'s trusted painting experts. Discover our values, meet our team, and see how we transform spaces with quality and care.',
   keywords: 'Lakeside Painting, Queenstown painters, professional painting services, about us, painting experts',
 };
