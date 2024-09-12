@@ -93,7 +93,7 @@ export default function Hero() {
                             Transform Your Space with <br></br> <span className="text-accent">Professional Painting</span>
                         </h1>
                         <h2 className="font-poppins text-base lg:text-base text-white/80  mb-8">
-                            Elevate Your Queenstown Property's Value and Appeal
+                            Elevate Your Queenstown Property&apos;s Value and Appeal
                         </h2>
                         <ButtonCta text='Book a Free Consultation' type={1} className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" />
                         <div className="mt-0">
