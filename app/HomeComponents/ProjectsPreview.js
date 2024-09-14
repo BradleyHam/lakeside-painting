@@ -30,7 +30,7 @@ function ProjectsPreview({projects}) {
               ))
               }
           </div>
-          <div className='flex '>
+          <div className='flex md:justify-center '>
             <ButtonSeeMore label='Find more projects' />
           </div>
    

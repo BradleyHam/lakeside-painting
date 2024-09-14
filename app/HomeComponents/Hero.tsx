@@ -89,7 +89,7 @@ export default function Hero() {
                         variants={fadeVariants}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <h1 className="font-poppins tracking-tight text-lg lg:text-xl font-bold text-white leading-normal mb-4">
+                        <h1 className="font-poppins tracking-tight text-lg xl:text-xl font-bold text-white leading-normal mb-4">
                             Transform Your Space with <br></br> <span className="text-accent">Professional Painting</span>
                         </h1>
                         <h2 className="font-poppins text-base lg:text-base text-white/80  mb-8">

@@ -42,7 +42,7 @@ export default function Testimonials() {
                     ))}
                 </div>
             </div>
-            <div className="flex lg:justify-center">
+            <div className="flex md:justify-center">
             <ButtonSeeMore label='Read More Testimonials' />
             </div>
         </section>

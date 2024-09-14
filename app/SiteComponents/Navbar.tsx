@@ -60,13 +60,13 @@ export default function Navbar() {
             shadow-sm
         `}>
             <div className="flex justify-between items-center px-5 py-4 lg:px-[80px] h-full">
-                <div className="flex items-center lg:hidden">
+                <div className="flex items-center xl:hidden">
                     <div onClick={handleToggle} className="cursor-pointer text-primary">
                         {open ? <IoClose size={25} /> : <IoMenu size={35} />}
                     </div>
                 </div>
 
-                <Link href={'/'} className="lg:order-first">
+                <Link href={'/'} className="xl:order-first">
                     <div className="logo scale-2">
                         <Image src={'/images/logo.png'} alt="logo" height={150} width={150} /> 
                     </div>
@@ -131,7 +131,7 @@ export default function Navbar() {
                     </Link>
                 </ul>
                 
-                <div className="hidden lg:block">
+                <div className="hidden xl:block">
                     <Link rel="stylesheet" href="/bookingPage" >
                     <ButtonCta text='Book a consultation' type={2}/>
                     </Link>

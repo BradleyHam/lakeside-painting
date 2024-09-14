@@ -15,7 +15,7 @@ export default function Contact(){
       
              <div className="contact bg-light-bg/10 text-primary px-side-spacing py-section-spacing">
             <div className=" ">
-            <div className="flex flex-col lg:flex-row lg:space-y-0 space-y-6 ">
+            <div className="flex flex-col lg:flex-row lg:space-x-4 lg:space-y-0 space-y-6 ">
                 <div className="text-side lg:w-1/2 ">
                
               <h2 className='text-base font-semibold mb-4'>Get in touch to arrange a consultation or get some free advice </h2>

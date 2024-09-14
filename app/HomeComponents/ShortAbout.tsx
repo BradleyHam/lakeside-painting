@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { MdArrowOutward } from "react-icons/md";
 import SectionHeading from '../SiteComponents/SectionHeading';
 import ButtonSeeMore from '../SiteComponents/ButtonSeeMore';
+import Link from 'next/link';
 
 // create a short function that returns a component for each stat:   <p><span>25+</span>Experience Combined</p>
 
@@ -24,10 +25,10 @@ const ShortAbout: React.FC = () => {
            
             </div>
          
-            <div className="container relative z-20 ">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 ">
-                    <div className="bg-white p-3 shadow-lg max-h-[400px]">
-                    <div className=" bg-gray-200 h-[300px] lg:h-full  w-full relative shadow-xl">
+            <div className=" relative z-20 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 lg:gap-10  ">
+                    <div className="bg-white p-3 shadow-lg h-[300px]  lg:h-[400px]">
+                    <div className=" bg-gray-200  h-full  w-full relative shadow-xl">
                         <Image 
                             src='/images/team-photo.jpg' 
                             alt='Lakeside Painting team of expert painters in Queenstown, New Zealand, ready to transform your home or business' 
@@ -43,17 +44,18 @@ const ShortAbout: React.FC = () => {
                                 <Stat number={6} title='Years in Business'/>
                                 <Stat number={100} title='Houses Transformed'/>
                             </div>
-                         <p className='text-primary/75 text-sm mb-6'>
-At Lakeside Painting, we specialize in transforming homes and commercial spaces across Queenstown with high-quality painting services. With over 25 years of combined experience, our team of skilled painters is dedicated to enhancing the beauty and value of your property. From stunning exterior finishes that withstand Queenstown&apos;s weather conditions to flawless interior detailing, we offer comprehensive solutions tailored to meet your unique needs.
+                        <p className='text-primary/75 text-sm mb-6'>
+                        At Lakeside Painting, we specialize in transforming homes and commercial spaces across Queenstown with high-quality painting services. With over 25 years of combined experience, our team of skilled painters is dedicated to enhancing the beauty and value of your property. From stunning exterior finishes that withstand Queenstown&apos;s weather conditions to flawless interior detailing, we offer comprehensive solutions tailored to meet your unique needs.
 
-{/* <br /> 
-<br /> */}
-{/* 
-As a locally-owned and operated business, we take pride in our reputation for reliability, professionalism, and meticulous attention to detail. Whether you&apos;re looking to refresh your home&apos;s interior or elevate your business &apos; s curb appeal, Lakeside Painting is your go-to partner for exceptional results that last. Trust us to deliver a seamless painting experience that exceeds your expectations, every time. */}
- </p>
- <ButtonSeeMore label='Read Our Story' />
+                        {/* <br /> 
+                        <br /> */}
+                        {/* 
+                        As a locally-owned and operated business, we take pride in our reputation for reliability, professionalism, and meticulous attention to detail. Whether you&apos;re looking to refresh your home&apos;s interior or elevate your business &apos; s curb appeal, Lakeside Painting is your go-to partner for exceptional results that last. Trust us to deliver a seamless painting experience that exceeds your expectations, every time. */}
+                        </p>
 
-                       
+                        <Link href='/about'>
+                             <ButtonSeeMore label='Read Our Story' />
+                        </Link>
                          </div>
                          </div>
              
