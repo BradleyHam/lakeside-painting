@@ -9,14 +9,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const sliderData = [
     {
-        beforeImage: '/images/mock-exterior-1/mock-exterior-image-1--before.jpg',
-        afterImage: '/images/mock-exterior-1/mock-exterior-image-1--after.jpg',
+        beforeImage: '/images/BeforeAfter/BerforeAfter-1-before.jpg',
+        afterImage: '/images/BeforeAfter/BeforeAfter-1-after.jpg',
         beforeAlt: 'Before renovation 3',
         afterAlt: 'After renovation 3'
     },
     {
-        beforeImage: '/images/arthurs-point/ap-wallpaper-before.jpg',
-        afterImage: '/images/arthurs-point/ap-wallpaper-after.jpeg',
+        beforeImage: '/images/BeforeAfter/BeforeAfter-2-before.jpg',
+        afterImage: '/images/BeforeAfter/BeforeAfter-2-after.jpg',
         beforeAlt: 'Before renovation 1',
         afterAlt: 'After renovation 1'
     },
