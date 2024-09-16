@@ -77,20 +77,22 @@ export default function Navbar() {
                 )}
                 
                 <ul className="flex-row space-x-6 items-center hidden xl:flex text-primary text-[13px] uppercase  tracking-wider">
-                    <Link href="/">
-                        <li className={pathname === '/' ? 'font-bold' : ''}>Home</li>
-                    </Link>
-                    <Link href="/about">
-                        <li className={pathname === '/about' ? 'font-bold' : ''}>About</li>
-                    </Link>
+                    <li className={pathname === '/' ? 'font-bold' : ''}>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li className={pathname === '/about' ? 'font-bold' : ''}>
+                        <Link href="/about">About</Link>
+                    </li>
                     <li 
                         className={`relative group ${isServicesActive ? 'font-bold' : ''}`}
                         onMouseEnter={() => setIsServicesOpen(true)}
                         onMouseLeave={() => setIsServicesOpen(false)}
                     >
-                        <span className="cursor-pointer flex items-center">
-                            Services
-                        </span>
+                        <Link href="/services">
+                            <span className="cursor-pointer flex items-center">
+                                Services
+                            </span>
+                        </Link>
                         <AnimatePresence>
                             {isServicesOpen && (
                                 <>
@@ -117,24 +119,22 @@ export default function Navbar() {
                             )}
                         </AnimatePresence>
                     </li>
-                    <Link href="/projects">
-                        <li className={pathname.startsWith('/projects') ? 'font-bold' : ''}>Projects</li>
-                    </Link>
-                    <Link href="/cost-calculator">
-                        <li className={pathname === '/cost-calculator' ? 'font-bold' : ''}>Cost Calculator</li>
-                    </Link>
-                    <Link href="/testimonials">
-                        <li className={pathname === '/testimonials' ? 'font-bold' : ''}>Testimonials</li>
-                    </Link>
-                    <Link href="/contact">
-                        <li className={pathname === '/contact' ? 'font-bold' : ''}>Contact</li>
-                    </Link>
+                    <li className={pathname.startsWith('/projects') ? 'font-bold' : ''}>
+                        <Link href="/projects">Projects</Link>
+                    </li>
+                    <li className={pathname === '/cost-calculator' ? 'font-bold' : ''}>
+                        <Link href="/cost-calculator">Cost Calculator</Link>
+                    </li>
+                    <li className={pathname === '/testimonials' ? 'font-bold' : ''}>
+                        <Link href="/testimonials">Testimonials</Link>
+                    </li>
+                    <li className={pathname === '/contact' ? 'font-bold' : ''}>
+                        <Link href="/contact">Contact</Link>
+                    </li>
                 </ul>
                 
                 <div className="hidden xl:block">
-                    <Link rel="stylesheet" href="/bookingPage" >
-                    <ButtonCta text='Book a consultation' type={2}/>
-                    </Link>
+                        <ButtonCta text='Book a consultation' type={2} />
                 </div>
             </div>
         </div>

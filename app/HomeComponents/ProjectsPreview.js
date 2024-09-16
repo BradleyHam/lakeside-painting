@@ -12,8 +12,6 @@ function ProjectsPreview({projects}) {
               title="See some of our recent projects" 
               type={1}
             />
-              
-         
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 ">
                 {projects.map((project, index) => (
                 <div key={`${project.slug}-${index}`} className="h-full bg-white rounded-lg "> {/* Added h-full here */}
@@ -31,7 +29,7 @@ function ProjectsPreview({projects}) {
               }
           </div>
           <div className='flex md:justify-center '>
-            <ButtonSeeMore label='Find more projects' />
+            <ButtonSeeMore label='Find more projects' linkTo='/projects'/>
           </div>
    
     </div>

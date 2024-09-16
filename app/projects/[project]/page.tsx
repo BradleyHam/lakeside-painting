@@ -197,12 +197,9 @@ export default function Project({ params }: { params: { project: string } }) {
               ))}
             </div>
             <div className="text-center">
-              <Link href="/projects" className="">
-                   <button className='mt-[48px] font-semibold flex items-center space-x-4 px-6 py-4 text-primary rounded-lg group'>
-              <span className='transition-all duration-300 group-hover:translate-x-1 '>See all projects</span>    
-              
-              <FaArrowRightLong className='transition-all duration-300 group-hover:-translate-x-1' />
-            </button>
+              <Link href="/projects" className="mt-[48px] font-semibold flex items-center space-x-4 px-6 py-4 text-primary rounded-lg group">
+                <span className='transition-all duration-300 group-hover:translate-x-1 '>See all projects</span>    
+                <FaArrowRightLong className='transition-all duration-300 group-hover:-translate-x-1' />
               </Link>
             </div>
           </div>

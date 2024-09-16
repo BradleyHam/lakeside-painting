@@ -19,8 +19,8 @@ export default function AdminPage() {
       {isConnected ? (
         <p>Google My Business is connected. Reviews will update automatically.</p>
       ) : (
-        <Link href="/api/auth/google">
-          <button className='p-5 bg-blue-200'>Connect Google My Business</button>
+        <Link className='p-5 bg-blue-200' href="/api/auth/google">
+          Connect Google My Business
         </Link>
       )}
     </div>

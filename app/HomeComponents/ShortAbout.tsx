@@ -53,9 +53,11 @@ const ShortAbout: React.FC = () => {
                         As a locally-owned and operated business, we take pride in our reputation for reliability, professionalism, and meticulous attention to detail. Whether you&apos;re looking to refresh your home&apos;s interior or elevate your business &apos; s curb appeal, Lakeside Painting is your go-to partner for exceptional results that last. Trust us to deliver a seamless painting experience that exceeds your expectations, every time. */}
                         </p>
 
-                        <Link href='/about'>
-                             <ButtonSeeMore label='Read Our Story' />
-                        </Link>
+                    
+                         {typeof window !== 'undefined' && window.location.pathname === '/' && (
+                           <ButtonSeeMore label='Read Our Story' linkTo='/about' />
+                         )}
+                     
                          </div>
                          </div>
              

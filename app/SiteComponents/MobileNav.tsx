@@ -45,7 +45,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
             <div className="absolute top-8 right-12 cursor-pointer">
                 <IoClose onClick={handleToggle} size={25} /> 
             </div>
-           
+            
             {[
                 { path: '/', text: 'Home' },
                 { path: '/about', text: 'About' },
@@ -56,16 +56,17 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, onClose, handleToggle }) =>
                 { path: '/testimonials', text: 'Testimonials' },
                 { path: '/contact', text: 'Contact' }
             ].map((item, index) => (
-                <Link key={item.path} href={item.path} onClick={handleToggle}>
-                    <li 
-                        className={isActive(item.path) ? 'font-bold' : ''}
-                        ref={(el) => { listItemRefs.current[index] = el }}
-                        data-path={item.path}
-                        style={{ opacity: 0, transform: 'translateY(20px)' }}
-                    >
+                <li 
+                    key={item.path} 
+                    className={isActive(item.path) ? 'font-bold' : ''}
+                    ref={(el) => { listItemRefs.current[index] = el }}
+                    data-path={item.path}
+                    style={{ opacity: 0, transform: 'translateY(20px)' }}
+                >
+                    <Link href={item.path} onClick={handleToggle}>
                         {item.text}
-                    </li>
-                </Link>
+                    </Link>
+                </li>
             ))}
             <div ref={buttonRef} className="pt-8 self-start" style={{ opacity: 0, transform: 'translateY(20px)' }}>
                 <ButtonCta text='Book a consultation' type={1} />

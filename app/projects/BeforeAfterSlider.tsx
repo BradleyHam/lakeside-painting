@@ -1,8 +1,9 @@
-'use client'
+'use client';
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6';
 
 interface BeforeAfterSliderProps {
     beforeImage: string;
@@ -32,101 +33,116 @@ export default function BeforeAfterSlider({
     const [canAnimate, setCanAnimate] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
     const handleRef = useRef<HTMLDivElement>(null);
-    const sliderRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setSliderPosition(initialPosition);
-    }, [initialPosition]);
-
-    useEffect(() => {
-        if (showInitialTooltip) {
-            showTooltipAnimation();
-        }
-    }, [showInitialTooltip]);
-
+    // Tooltip Animation Control
     const showTooltipAnimation = useCallback(() => {
         if (canAnimate) {
             setIsTooltipVisible(true);
             setCanAnimate(false);
-            
-            // Animate out after 2 seconds (adjust as needed)
+
+            // Hide tooltip after 2 seconds
             setTimeout(() => {
                 setIsTooltipVisible(false);
             }, 2000);
 
-            // Allow next animation after 5 seconds
+            // Re-enable animation after 5 seconds
             setTimeout(() => {
                 setCanAnimate(true);
             }, 5000);
         }
     }, [canAnimate]);
 
+    // Show tooltip on initial render if required
+    useEffect(() => {
+        if (showInitialTooltip) {
+            showTooltipAnimation();
+        }
+    }, [showInitialTooltip, showTooltipAnimation]);
+
+    // Intersection Observer to trigger tooltip when in view
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
-                showTooltipAnimation(); // Trigger tooltip animation when in view
+                showTooltipAnimation();
             }
-        }, { threshold: 0.1 }); // Adjust threshold as needed
+        }, { threshold: 0.1 });
 
-        if (sliderRef.current) {
-            observer.observe(sliderRef.current);
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
         }
 
         return () => {
-            if (sliderRef.current) {
-                observer.unobserve(sliderRef.current);
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
             }
         };
     }, [showTooltipAnimation]);
 
-    const handleMouseEnter = useCallback(() => {
-        showTooltipAnimation();
-    }, [showTooltipAnimation]);
-
+    // Function to handle slider movement
     const handleMove = (clientX: number) => {
         if (containerRef.current) {
             const containerRect = containerRef.current.getBoundingClientRect();
             const newPosition = ((clientX - containerRect.left) / containerRect.width) * 100;
             setSliderPosition(Math.min(Math.max(newPosition, 0), 100));
+            console.log(`Slider Position Updated: ${newPosition}%`); // Debugging
         }
     };
 
+    // Mouse Event Handlers
     const handleMouseDown = (e: React.MouseEvent) => {
         e.preventDefault();
+        e.stopPropagation();
+        console.log('Mouse Down on Handle'); // Debugging
+
         handleMove(e.clientX);
 
-        const handleMouseMove = (e: MouseEvent) => handleMove(e.clientX);
+        const handleMouseMove = (e: MouseEvent) => {
+            handleMove(e.clientX);
+        };
+
         const handleMouseUp = () => {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseup', handleMouseUp);
+            console.log('Mouse Up'); // Debugging
         };
 
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
     };
 
+    // Touch Event Handlers
     const handleTouchStart = (e: React.TouchEvent) => {
         e.preventDefault();
+        e.stopPropagation();
+        console.log('Touch Start on Handle'); // Debugging
+
         handleMove(e.touches[0].clientX);
 
-        const handleTouchMove = (e: TouchEvent) => handleMove(e.touches[0].clientX);
+        const handleTouchMove = (e: TouchEvent) => {
+            handleMove(e.touches[0].clientX);
+        };
+
         const handleTouchEnd = () => {
             document.removeEventListener('touchmove', handleTouchMove);
             document.removeEventListener('touchend', handleTouchEnd);
+            console.log('Touch End'); // Debugging
         };
 
-        document.addEventListener('touchmove', handleTouchMove);
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
         document.addEventListener('touchend', handleTouchEnd);
     };
 
+    // Click Handlers for Before and After Images
     const handleBeforeClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         if (onBeforeClick) onBeforeClick();
+        console.log('Before Image Clicked'); // Debugging
     };
 
     const handleAfterClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         if (onAfterClick) onAfterClick();
+        console.log('After Image Clicked'); // Debugging
     };
 
     const tagStyle = "absolute bottom-4 bg-white bg-opacity-90 text-primary text-sm capitalize font-semibold px-4 py-2";
@@ -145,26 +161,18 @@ export default function BeforeAfterSlider({
         }
     };
 
-
     const bgColor = hero ? "bg-gray-200" : "bg-white";
 
-
     return (
-        <div className={`relative ${bgColor} p-2 h-full w-full  overflow-hidden shadow-xl`}>
-            <div 
-                ref={sliderRef} // Attach ref to the slider container
-                className="relative h-full w-full overflow-hidden"
-                onMouseEnter={handleMouseEnter}
-                onMouseDown={handleMouseDown}
-                onTouchStart={handleTouchStart}
-            >
-                {/* Add shadow overlay */}
+        <div className={`relative ${bgColor} p-2 h-full w-full overflow-hidden shadow-xl`} ref={containerRef}>
+            <div className="relative h-full w-full overflow-hidden">
+                {/* Shadow Overlay */}
                 <div className="absolute inset-0 pointer-events-none z-20 shadow-[inset_0_-60px_50px_-15px_rgba(0,0,0,0.3)] rounded-lg"></div>
                 
-                {/* Add light effect */}
+                {/* Light Gradient Overlay */}
                 <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-50 rounded-lg"></div>
 
-                {/* Existing before image div */}
+                {/* Before Image */}
                 <div className="absolute inset-0" onClick={handleBeforeClick}>
                     <Image 
                         src={beforeImage} 
@@ -176,7 +184,7 @@ export default function BeforeAfterSlider({
                     <div className={`${tagStyle} left-4`}>Before</div>
                 </div>
 
-                {/* Existing after image div */}
+                {/* After Image with Clip Path */}
                 <div 
                     className="absolute inset-0" 
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
@@ -192,20 +200,37 @@ export default function BeforeAfterSlider({
                     <div className={`${tagStyle} right-4`}>After</div>
                 </div>
 
-                {/* Updated slider handle with tooltip */}
+                {/* Dividing Line */}
+                <div
+                    className={`${bgColor} absolute top-0 bottom-0`}
+                    style={{
+                        left: `calc(${sliderPosition}% - 4px)`, // Centers the line
+                        width: '8px', // Matches p-2 (8px) padding
+                        transform: 'translateX(-50%)' // Center the line
+                    }}
+                />
+
+                {/* Slider Handle */}
                 <div 
-                    ref={handleRef}
-                    className={`${bgColor} absolute top-0 bottom-0 w-1 cursor-ew-resize z-50`}
-                    style={{ left: `calc(${sliderPosition}% - 2px)` }}
+                    className={`absolute top-0 bottom-0 w-8 cursor-ew-resize z-30`}
+                    style={{ left: `calc(${sliderPosition}% - 4px)`, transform: 'translateX(-50%)' }} // Adjusted to align with dividing line
                 >
-                    <div className={`${bgColor} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center shadow-md`}>
+                    <div 
+                        className={`${bgColor} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center shadow-md`}
+                        onMouseDown={handleMouseDown}
+                        onTouchStart={handleTouchStart}
+                        onClick={(e) => e.stopPropagation()} // Prevent clicks from triggering parent events
+                        ref={handleRef}
+                    >
                         <FaCaretLeft className="text-primary" />
                         <FaCaretRight className="text-primary" />
                     </div>
+
+                    {/* Tooltip */}
                     <AnimatePresence>
                         {isTooltipVisible && (
                             <motion.div
-                                className="absolute -mt-5 top-1/2 right-8 transform -translate-y-1/2 px-3 py-2 rounded-lg shadow-lg bg-white/80 backdrop-blur-sm border border-white/20"
+                                className="absolute -mt-5 top-1/2 right-10 transform -translate-y-1/2 px-3 py-2 rounded-lg shadow-lg bg-white/80 backdrop-blur-sm border border-white/20"
                                 initial="hidden"
                                 animate={["visible", "wiggle"]}
                                 exit="hidden"

@@ -28,22 +28,12 @@ export default function Home() {
           <StatRow />
           <ShortAbout />
           <Services />
-          <div className="grid grid-cols-3">
-            
-            
-          </div>
           <Testimonials />
           <ProjectsPreview projects={projects} />
-          
           <Faq />
           <ProcessSection bg='white'/>
-          {/* <Contact /> */}
-          {/* <FooterBanner /> */}
-          {/* <BookingForm /> */}
-        
           <FooterBanner />
           <Footer />
-    
     </main>
   );
 }

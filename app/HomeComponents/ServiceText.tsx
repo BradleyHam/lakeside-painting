@@ -13,10 +13,8 @@ export default function ServiceText({heading, bulletPoints}: {heading: string, b
                 {bulletPoints.map((point, index) =>   <li key={index} className='flex items-center space-x-2'><div className=""><FaCheck/></div><p className='opacity-90'>{point}</p></li>)}
             </ul>
             </div>
-
-            <Link href="/projects">
-             <ButtonSeeMore label="See Our Projects" />
-            </Link>
+             <ButtonSeeMore label="See Our Projects" linkTo="/projects" />
+        
         </div>    
     </>    
     )

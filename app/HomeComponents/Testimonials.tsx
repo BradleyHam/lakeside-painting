@@ -43,7 +43,7 @@ export default function Testimonials() {
                 </div>
             </div>
             <div className="flex md:justify-center">
-            <ButtonSeeMore label='Read More Testimonials' />
+            <ButtonSeeMore label='Read More Testimonials' linkTo='/testimonials' />
             </div>
         </section>
     )
