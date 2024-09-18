@@ -47,8 +47,7 @@ const ShortAbout: React.FC = () => {
                         <p className='text-primary/75 text-sm mb-6'>
                         At Lakeside Painting, we specialize in transforming homes and commercial spaces across Queenstown with high-quality painting services. With over 25 years of combined experience, our team of skilled painters is dedicated to enhancing the beauty and value of your property. From stunning exterior finishes that withstand Queenstown&apos;s weather conditions to flawless interior detailing, we offer comprehensive solutions tailored to meet your unique needs.
 
-                        {/* <br /> 
-                        <br /> */}
+                       
                         {/* 
                         As a locally-owned and operated business, we take pride in our reputation for reliability, professionalism, and meticulous attention to detail. Whether you&apos;re looking to refresh your home&apos;s interior or elevate your business &apos; s curb appeal, Lakeside Painting is your go-to partner for exceptional results that last. Trust us to deliver a seamless painting experience that exceeds your expectations, every time. */}
                         </p>
