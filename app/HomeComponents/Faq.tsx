@@ -3,9 +3,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import SectionHeading from '../SiteComponents/SectionHeading';
+import Link from 'next/link';
 
 // Updated array of FAQs
-const faqData = [
+interface FAQItem {
+  question: string;
+  answer: React.ReactNode;
+}
+
+const faqData: FAQItem[] = [
   {
     question: "Do you offer free quotes or estimates?",
     answer: "Yes, we offer free, no-obligation quotes for all our painting and decorating services. We can provide an estimate based on the information you give us over the phone or email, but for the most accurate quote, we prefer to visit your property and assess the job in person."
@@ -29,6 +35,22 @@ const faqData = [
   {
     question: "What kind of prep work do you do before painting?",
     answer: "Proper preparation is crucial for a high-quality, long-lasting paint job. Our prep work typically includes cleaning the surfaces, repairing cracks or holes, sanding rough areas, removing old paint, applying primer where necessary, and protecting non-paintable surfaces. The exact prep work can vary depending on the condition of the surfaces and the specific requirements of each job. We always discuss our preparation process with clients before starting the work."
+  },
+  {
+    question: "How much will it cost?",
+    answer: (
+      <>
+        The cost of painting can vary depending on many factors such as the size of the area, the type of paint, and the condition of the surfaces. For a quick estimate, you can use our{' '}
+        <Link href="/cost-calculator" className="text-primary hover:underline">
+          cost calculator tool
+        </Link>
+        . For a more detailed explanation of pricing factors, check out our{' '}
+        <Link href="https://www.kiwipaintingtips.co.nz/painting-cost-calculator" className="text-primary hover:underline">
+          article on painting costs
+        </Link>
+        {' '}written by our owner. For the most accurate quote, we recommend scheduling a free on-site assessment.
+      </>
+    )
   }
 ];
 
@@ -109,9 +131,9 @@ const FAQ = () => {
                       }}
                       transition={{ duration: 0.2 }}
                     >
-                      <p className="text-primary/60 mt-4 text-sm">
+                      <div className="text-primary/60 mt-4 text-sm">
                         {faq.answer}
-                      </p>
+                      </div>
                     </motion.div>
                   </motion.div>
                 )}

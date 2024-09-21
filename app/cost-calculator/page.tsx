@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import PaintingCostCalculator from './PaintingCostCalculator';
+import Navbar from '@/app/SiteComponents/Navbar';
+import TopBanner from '@/app/SiteComponents/TopBanner';
+import ProcessSection from '@/app/HomeComponents/ProcessSection';
+import FooterBanner from '@/app/SiteComponents/FooterBanner';
+import Footer from '@/app/SiteComponents/Footer';
 
 export const metadata: Metadata = {
   title: 'Painting Cost Calculator | Lakeside Painting Queenstown',
@@ -16,5 +21,18 @@ export const metadata: Metadata = {
 }
 
 export default function CostCalculatorPage() {
-  return <PaintingCostCalculator />;
+  return (
+  <div>
+  <Navbar />
+  <TopBanner 
+        headingSmall="Cost Calculator" 
+        headingLarge="Get an idea of what your painting project will cost"
+      />
+  <PaintingCostCalculator />
+ 
+  <ProcessSection bg='white'/>
+  <FooterBanner />
+  <Footer />
+  </div>
+  )
 }

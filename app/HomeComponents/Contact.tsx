@@ -18,7 +18,7 @@ export default function Contact(){
             <div className="flex flex-col lg:flex-row lg:space-x-4 lg:space-y-0 space-y-6 ">
                 <div className="text-side lg:w-1/2 ">
                
-              <h2 className='text-base font-semibold mb-4'>Get in touch to arrange a consultation or get some free advice </h2>
+              <h2 className='text-base font-semibold mb-4'>Get Your Free Consultation </h2>
               
                     <div className="contact-method mb-2 flex items-center space-x-2 text-accent-2">
                         <FaPhoneAlt />
@@ -26,7 +26,7 @@ export default function Contact(){
                     </div>
                     <div className="contact-method text-accent-2 flex items-center space-x-2 ">
                          <MdEmail size={20} /> 
-                        <p className=" opacity-80 text-sm text-primary">littedogdecorating@gmail.com</p>
+                        <p className=" opacity-80 text-sm text-primary">lakesidepaintinglimited@gmail.com</p>
                     </div>
                 </div>
                 <div className="form-side lg:w-1/2 bg-accent-2/20 ">

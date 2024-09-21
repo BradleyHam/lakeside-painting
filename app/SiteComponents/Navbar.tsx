@@ -88,11 +88,11 @@ export default function Navbar() {
                         onMouseEnter={() => setIsServicesOpen(true)}
                         onMouseLeave={() => setIsServicesOpen(false)}
                     >
-                        <Link href="/services">
+                     
                             <span className="cursor-pointer flex items-center">
                                 Services
                             </span>
-                        </Link>
+                 
                         <AnimatePresence>
                             {isServicesOpen && (
                                 <>

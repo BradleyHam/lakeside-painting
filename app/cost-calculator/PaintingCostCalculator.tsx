@@ -5,6 +5,7 @@ import ProcessSection from '../HomeComponents/ProcessSection';
 import FooterBanner from '@/app/SiteComponents/FooterBanner';
 import TopBanner from '@/app/SiteComponents/TopBanner';
 import Footer from '@/app/SiteComponents/Footer';
+import ButtonSeeMore from '@/app/SiteComponents/ButtonSeeMore';
 
 interface SurfaceTypes {
   [key: string]: {
@@ -48,12 +49,7 @@ const PaintingCostCalculator: React.FC = () => {
       };
     
       return (
-        <div>
-        <Navbar />
-        <TopBanner 
-              headingSmall="Cost Calculator" 
-              headingLarge="Get an idea of what your painting project will cost"
-            />
+      
         <div className="bg-light-bg/10 min-h-screen py-section-spacing px-side-spacing">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
             <div className="bg-primary text-white py-6 px-8">
@@ -122,11 +118,11 @@ const PaintingCostCalculator: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className='flex justify-center mt-12'>
+            <ButtonSeeMore label='Read Our Blog Article On Painting Costs' linkTo='https://www.kiwipaintingtips.co.nz/painting-cost-calculator' />
+          </div>
         </div>
-        <ProcessSection bg='white'/>
-        <FooterBanner />
-        <Footer />
-        </div>
+      
       );
     };
 
