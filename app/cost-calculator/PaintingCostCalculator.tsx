@@ -47,7 +47,7 @@ const PaintingCostCalculator: React.FC = () => {
         }
         setTotalCost(Number(cost.toFixed(2)));
       };
-    
+    // ----
       return (
       
         <div className="bg-light-bg/10 min-h-screen py-section-spacing px-side-spacing">
